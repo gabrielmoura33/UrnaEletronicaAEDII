@@ -1,0 +1,7 @@
+Jose; 19831; Minas Gerais; 337776; 213716;
+Gabriel; 22222; Contagem; 232132; 213716;
+Daniela; 23131; Sao Jose do Rio Preto; 12213; 213716;
+Daniela; 23131; Sao Jose do Rio Preto; 12213; 12321321;
+Petrusca; 231231; Sao Jose do Rio Preto; 12213; 12321321;
+Cataruba; 12323123; Sao Jose do Rio Preto; 12213; 12321321;
+Josiuda; 43364534; Sao Jose do Rio Preto; 12213; 213716;

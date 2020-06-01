@@ -104,7 +104,7 @@ public class ABBPartido {
     private void imprimirMenorMaior(NodoPartido raizArvore){
         if (raizArvore != null) {
             imprimirMenorMaior(raizArvore.esquerda);
-            System.out.println("Nome: " + raizArvore.item.getNome() + "         Nome do partido : " + raizArvore.item.getNome() + "     ");
+            System.out.println("Nome do partido : " + raizArvore.item.getNome() + "     ");
             System.out.println("Sigla do partido: " + raizArvore.item.getSigla());
             System.out.println("\n");
             imprimirMenorMaior(raizArvore.direita);

@@ -6,6 +6,7 @@ import Classes.Eleitor;
 public class ABBEleitor {
 
 	private NodoEleitor raiz;
+    private Eleitor[] arrayEleitores;
 
     public ABBEleitor()
     {
@@ -121,19 +122,34 @@ public class ABBEleitor {
         imprimirMenorMaior(this.raiz);
     }
 
-    private int contarNumAlunos(NodoEleitor raizArvore) {
+    private int contarNumEleitores(NodoEleitor raizArvore) {
         int soma = 1;
         if (raizArvore.esquerda != null){
-            soma += contarNumAlunos(raizArvore.esquerda);
+            soma += contarNumEleitores(raizArvore.esquerda);
         }
         if (raizArvore.direita != null) {
-            soma += contarNumAlunos(raizArvore.direita);
+            soma += contarNumEleitores(raizArvore.direita);
         }
         return  soma;
     }
 
-    public int numAlunos(){
-        return contarNumAlunos(this.raiz);
+    public int numEleitores(){
+        return contarNumEleitores(this.raiz);
+    }
+
+
+    private Eleitor[] retornaEleitorMenorMaior(NodoEleitor raizArvore, int posicao){
+        if (raizArvore != null) {
+            retornaEleitorMenorMaior(raizArvore.esquerda, posicao + 1);
+              arrayEleitores[posicao] = raizArvore.item;
+            retornaEleitorMenorMaior(raizArvore.direita, posicao + 1);
+        }
+        return arrayEleitores;
+    }
+
+    public Eleitor[] retornaEleitor() {
+        arrayEleitores = new Eleitor[numEleitores()];
+        return retornaEleitorMenorMaior(this.raiz, 0);
     }
 
 }

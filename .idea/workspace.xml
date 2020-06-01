@@ -1,23 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1ef3e9db-e756-4229-84bc-41b49ac7cd92" name="Default Changelist" comment="" />
+    <list default="true" id="1ef3e9db-e756-4229-84bc-41b49ac7cd92" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/candidatos.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/municipios.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/partido.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Classes/Urnas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DAO/UrnasDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/EstruturasDeDados/Urnas/CelulaUrna.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/EstruturasDeDados/Urnas/PilhaUrna.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urnas.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UrnaEletronica/DAO/CandidatosDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UrnaEletronica/DAO/CandidatosDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UrnaEletronica/DAO/EleitorDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UrnaEletronica/DAO/EleitorDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UrnaEletronica/DAO/PartidoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UrnaEletronica/DAO/PartidoDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UrnaEletronica/EstruturasDeDados/Eleitor/ABBEleitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UrnaEletronica/EstruturasDeDados/Eleitor/ABBEleitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UrnaEletronica/EstruturasDeDados/Partido/ABBPartido.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UrnaEletronica/EstruturasDeDados/Partido/ABBPartido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UrnaEletronica/Testes/TestaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UrnaEletronica/Testes/TestaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/CandidatosDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/CandidatosDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/EleitorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/EleitorDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/PartidoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/PartidoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EstruturasDeDados/Candidatos/ABBCandidatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EstruturasDeDados/Candidatos/ABBCandidatos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EstruturasDeDados/Eleitor/ABBEleitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EstruturasDeDados/Eleitor/ABBEleitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EstruturasDeDados/Partido/ABBPartido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EstruturasDeDados/Partido/ABBPartido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Testes/TestaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Testes/TestaDAO.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1cN6PVD6Wg4NNgPJs4TKg8BxgMj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/EstruturasDeDados/Urnas" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/EstruturasDeDados/Urnas" />
+      <recent name="$PROJECT_DIR$/src/DAO" />
+      <recent name="$PROJECT_DIR$/src/Classes" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
@@ -67,5 +110,38 @@
       <updated>1590356679359</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="378" y="129" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1590360726250">
+      <screen x="0" y="23" width="1280" height="710" />
+    </state>
+    <state x="378" y="129" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.23.1280.710@0.23.1280.710" timestamp="1590360726250" />
+    <state width="1238" height="173" key="GridCell.Tab.0.bottom" timestamp="1590984738500">
+      <screen x="0" y="23" width="1280" height="706" />
+    </state>
+    <state width="1238" height="173" key="GridCell.Tab.0.bottom/0.23.1280.706@0.23.1280.706" timestamp="1590984738500" />
+    <state width="1238" height="173" key="GridCell.Tab.0.bottom/0.23.1280.708@0.23.1280.708" timestamp="1590983718577" />
+    <state width="1238" height="173" key="GridCell.Tab.0.bottom/0.23.1280.710@0.23.1280.710" timestamp="1590362717574" />
+    <state width="1238" height="173" key="GridCell.Tab.0.center" timestamp="1590984738498">
+      <screen x="0" y="23" width="1280" height="706" />
+    </state>
+    <state width="1238" height="173" key="GridCell.Tab.0.center/0.23.1280.706@0.23.1280.706" timestamp="1590984738498" />
+    <state width="1238" height="173" key="GridCell.Tab.0.center/0.23.1280.708@0.23.1280.708" timestamp="1590983718575" />
+    <state width="1238" height="173" key="GridCell.Tab.0.center/0.23.1280.710@0.23.1280.710" timestamp="1590362717572" />
+    <state width="1238" height="173" key="GridCell.Tab.0.left" timestamp="1590984738497">
+      <screen x="0" y="23" width="1280" height="706" />
+    </state>
+    <state width="1238" height="173" key="GridCell.Tab.0.left/0.23.1280.706@0.23.1280.706" timestamp="1590984738497" />
+    <state width="1238" height="173" key="GridCell.Tab.0.left/0.23.1280.708@0.23.1280.708" timestamp="1590983718571" />
+    <state width="1238" height="173" key="GridCell.Tab.0.left/0.23.1280.710@0.23.1280.710" timestamp="1590362717570" />
+    <state width="1238" height="173" key="GridCell.Tab.0.right" timestamp="1590984738499">
+      <screen x="0" y="23" width="1280" height="706" />
+    </state>
+    <state width="1238" height="173" key="GridCell.Tab.0.right/0.23.1280.706@0.23.1280.706" timestamp="1590984738499" />
+    <state width="1238" height="173" key="GridCell.Tab.0.right/0.23.1280.708@0.23.1280.708" timestamp="1590983718576" />
+    <state width="1238" height="173" key="GridCell.Tab.0.right/0.23.1280.710@0.23.1280.710" timestamp="1590362717573" />
   </component>
 </project>

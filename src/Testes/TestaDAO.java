@@ -1,42 +1,44 @@
 package Testes;
 
-import DAO.EleitorDAO;
+import Classes.Eleitor;
+import Classes.Urnas;
+import DAO.*;
+import EstruturasDeDados.Candidatos.ABBCandidatos;
 import EstruturasDeDados.Eleitor.ABBEleitor;
+import EstruturasDeDados.Municipios.ListaMunicipios;
+import EstruturasDeDados.Partido.ABBPartido;
+import EstruturasDeDados.Urnas.PilhaUrna;
 
 import java.io.IOException;
 
 public class TestaDAO {
     public static void main(String[] args) throws IOException {
         try {
-            var DAO = new EleitorDAO("testes.txt");
-            ABBEleitor listaEleitor = DAO.getAll();
+            var eleitorDAO = new EleitorDAO("eleitores.txt");
+            var urnasDAO = new UrnasDAO("urnas.txt");
 
-            listaEleitor.imprimirEmOrdem();
+            urnasDAO.cadastraEleitor(eleitorDAO.getAll(), urnasDAO.getAll());
 
-            System.out.println("Quantidade de Votantes");
-            System.out.println(listaEleitor.numAlunos());
+
+//            var candidatosDAO = new CandidatosDAO("candidatos.txt");
+//            ABBCandidatos arvoreCandidato = candidatosDAO.getall();
+//            arvoreCandidato.imprimirEmOrdem();
+
+//             var municipioDAO = new MunicipioDAO("municipios.txt");
+//             ListaMunicipios listaMunicipios = municipioDAO.getAll();
+//             listaMunicipios.imprimir();
+
+//            var partidosDAO = new PartidoDAO("partido.txt");
+//            ABBPartido arvorePartido = partidosDAO.getAll();
+//            arvorePartido.imprimirEmOrdem();
+
+//
+
+
+
         } catch (Exception e) {
             return;
         }
-
-
-
-
-//        listaEleitor.imprimir();
-//        Eleitor[] eleitor = new Eleitor[5];;
-//
-//        eleitor[0] = new Eleitor();
-//        eleitor[0].setNome("arrayEntrada[0]");
-//        eleitor[0].setTituloEleitoral(Double.parseDouble("13"));
-//        eleitor[0].setMunicipioEleitoral("arrayEntrada[2]");
-//        eleitor[0].setZonaEleitoral("arrayEntrada[3]");
-//        eleitor[0].setSecaoEleitoral("arrayEntrada[4]");
-//
-//        System.out.println(eleitor[0].getNome());
-//        System.out.println(eleitor[0].getTituloEleitoral());
-//        System.out.println(eleitor[0].getMunicipioEleitoral());
-//        System.out.println( eleitor[0].getZonaEleitoral());
-//        System.out.println(eleitor[0].getSecaoEleitoral());
 
     }
 }

@@ -2,6 +2,7 @@ package DAO;
 
 import java.io.*;
 import Classes.Candidatos;
+import EstruturasDeDados.Candidatos.ABBCandidatos;
 import EstruturasDeDados.Eleitor.ABBEleitor;
 
 public class CandidatosDAO {
@@ -13,13 +14,13 @@ public class CandidatosDAO {
 		this.filename = filename;
 	}
 	
-	public ABBEleitor getall() {
-		ABBEleitor arvore = readFromFile();
+	public ABBCandidatos getall() {
+		ABBCandidatos arvore = readFromFile();
 		return arvore;
 	}
 	
-	private ABBEleitor readFromFile() {
-		ABBEleitor aux = new ABBEleitor();
+	private ABBCandidatos readFromFile() {
+		ABBCandidatos aux = new ABBCandidatos();
 		
 		try(BufferedReader buffer_entrada = new BufferedReader(new FileReader(filename))){
 			String idSTR;
@@ -30,7 +31,7 @@ public class CandidatosDAO {
 				try {
 					String[] arrayEntrada = idSTR.split(";");
 					if(arrayEntrada.length > 5 || arrayEntrada.length < 5) {
-						throw new Exception("Erro de leitura! Dados obrigatorios não foram preenchidos");
+						throw new Exception("Erro de leitura! Dados obrigatorios nï¿½o foram preenchidos");
 					}
 					this.candidatos = new Candidatos[numeroDeLinhas + 1];
 					
@@ -41,7 +42,7 @@ public class CandidatosDAO {
 					this.candidatos[i].setPartidoPolitico(arrayEntrada[3]);
 					this.candidatos[i].setCargo(arrayEntrada[4].charAt(1));
 					
-					//aux.inserir(candidatos[i]);
+					aux.inserir(candidatos[i]);
 				}catch(Exception e) {
 					System.out.println(e);
 				}
@@ -75,8 +76,7 @@ public class CandidatosDAO {
 			}
 			
 			while(readChars != -1) {
-				System.out.println(readChars);
-				
+
 				for(int i=0; i<readChars; i++) {
 					if(c[i] == '\n') {
 						count++;

@@ -25,7 +25,7 @@ public class ABBCandidatos {
 			if(raizArvore.item.getNumero() > candidatos.getNumero()) {
 				raizArvore.esquerda = adicionar(raizArvore.esquerda, candidatos);
 			}else {
-				System.out.println("O Candidato " + candidatos.getNome() + ", cujo o Número " + candidatos.getNumero() + ", já foi inserido anteriormente na Árvore. \n");
+				System.out.println("O Candidato " + candidatos.getNome() + ", cujo o Nï¿½mero " + candidatos.getNumero() + ", jï¿½ foi inserido anteriormente na ï¿½rvore. \n");
 			}
 		}
 	return raizArvore;
@@ -52,7 +52,7 @@ public class ABBCandidatos {
 	
 	private NodoCandidatos retirar(NodoCandidatos raizArvore, double numero) {
 		if(raizArvore == null) {
-			System.out.println("O Candidato, cujo o Número " + numero + ", não foi encontrado");
+			System.out.println("O Candidato, cujo o Nï¿½mero " + numero + ", nï¿½o foi encontrado");
 			System.out.println("\n");
 			
 			return raizArvore;
@@ -85,7 +85,7 @@ public class ABBCandidatos {
 	public void imprimirMenorMaior(NodoCandidatos raizArvore) {
 		if(raizArvore != null) {
 			imprimirMenorMaior(raizArvore.esquerda);
-			System.out.println("Nome: " + raizArvore.item.getNome() + "             Número: " + raizArvore.item.getNumero() + "    ");
+			System.out.println("Nome: " + raizArvore.item.getNome() + "             Nï¿½mero: " + raizArvore.item.getNumero() + "    ");
 			System.out.println("Municipio: " + raizArvore.item.getMunicipio() + "               Partido Politico: " + raizArvore.item.getPartidoPolitico() + "      ");
 			System.out.println("Cargo: " + raizArvore.item.getCargo());
 			System.out.println("\n");
