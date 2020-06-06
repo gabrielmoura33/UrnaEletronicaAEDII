@@ -15,9 +15,10 @@ public class TestaDAO {
     public static void main(String[] args) throws IOException {
         try {
             var eleitorDAO = new EleitorDAO("eleitores.txt");
+            var candidatosDAO = new CandidatosDAO("candidatos.txt");
             var urnasDAO = new UrnasDAO("urnas.txt");
 
-            urnasDAO.cadastraEleitor(eleitorDAO.getAll(), urnasDAO.getAll());
+            urnasDAO.cadastraCandidatos(candidatosDAO.getall(), urnasDAO.getAll());
 
 
 //            var candidatosDAO = new CandidatosDAO("candidatos.txt");

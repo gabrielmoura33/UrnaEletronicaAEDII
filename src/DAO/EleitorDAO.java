@@ -49,11 +49,19 @@ public class EleitorDAO {
         } catch (Exception e) {
             System.out.println("Erro na abertura do Arquivo! \n Verifique o nome do arquivo e tente novamente.");
             System.exit(1);
-
         }
         return null;
     }
 
+
+    public ABBEleitor index(){
+        ABBEleitor arvore = readFromUrnaFile();
+        return arvore;
+    }
+
+    private ABBEleitor readFromUrnaFile(){
+        return null;
+    }
     public static int countLinesNew(String filename) throws IOException {
         InputStream is = new BufferedInputStream(new FileInputStream(filename));
         try {

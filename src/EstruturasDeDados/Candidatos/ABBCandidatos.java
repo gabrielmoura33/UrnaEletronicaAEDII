@@ -99,7 +99,7 @@ public class ABBCandidatos {
 	}
 
 	public int contarNumCandidatos(NodoCandidatos raizArvore) {
-		int soma = -1;
+		int soma = 1;
 
 		if(raizArvore.esquerda != null) {
 			soma += contarNumCandidatos(raizArvore.esquerda);

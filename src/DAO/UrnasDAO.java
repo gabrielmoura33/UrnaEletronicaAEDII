@@ -82,6 +82,7 @@ public class UrnasDAO {
     public void cadastraCandidatos(ABBCandidatos candidatos, PilhaUrna urnas){
         Urnas[] urnasCadastradas = urnas.retornaUrnas();
         Candidatos[] arrayCandidato = candidatos.retornaCandidato();
+
         for (Urnas urna : urnasCadastradas){
             String filename = urna.getNomeDoMunicípio().replace(" ", "_") + "_Candidatos.txt";
             try (BufferedWriter buffer_saida = new BufferedWriter(new FileWriter(filename))){

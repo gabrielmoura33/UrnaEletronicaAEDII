@@ -138,18 +138,28 @@ public class ABBEleitor {
     }
 
 
-    private Eleitor[] retornaEleitorMenorMaior(NodoEleitor raizArvore, int posicao){
+    private Eleitor[] retornaEleitorMenorMaior(NodoEleitor raizArvore, int posicao, String zonaEleitoral ){
         if (raizArvore != null) {
-            retornaEleitorMenorMaior(raizArvore.esquerda, posicao + 1);
-              arrayEleitores[posicao] = raizArvore.item;
-            retornaEleitorMenorMaior(raizArvore.direita, posicao + 1);
+            retornaEleitorMenorMaior(raizArvore.esquerda, posicao + 1, zonaEleitoral);
+            if (zonaEleitoral != null){
+                if (raizArvore.item.getZonaEleitoral().equalsIgnoreCase(zonaEleitoral)){
+                    arrayEleitores[posicao] = raizArvore.item;
+                }
+            } else
+                arrayEleitores[posicao] = raizArvore.item;
+            retornaEleitorMenorMaior(raizArvore.direita, posicao + 1, zonaEleitoral);
         }
         return arrayEleitores;
     }
 
     public Eleitor[] retornaEleitor() {
         arrayEleitores = new Eleitor[numEleitores()];
-        return retornaEleitorMenorMaior(this.raiz, 0);
+        return retornaEleitorMenorMaior(this.raiz, 0, null);
+    }
+
+    public Eleitor[] retornaEleitorPorZonaEleitoral (String zonaEleitoral) {
+        arrayEleitores = new Eleitor[numEleitores()];
+        return retornaEleitorMenorMaior(this.raiz, 0, zonaEleitoral);
     }
 
 }
