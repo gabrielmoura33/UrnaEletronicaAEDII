@@ -28,7 +28,7 @@ public class PartidoDAO {
                 try {
                     String[] arrayEntrada = idSTR.split(";");
                     if (arrayEntrada.length > 2 || arrayEntrada.length < 2){
-                        throw new Exception("Erro De leitura! Dados obrigatórios não foram preenchidos");
+                        throw new Exception("Erro De leitura Arquivo de Partidos! Dados obrigatórios não foram preenchidos");
                     }
                     this.Partido = new Partido[numeroDeLinhas + 1];
 
@@ -44,6 +44,7 @@ public class PartidoDAO {
             return aux;
         } catch (Exception e) {
             System.out.println("Erro na abertura do Arquivo! \n Verifique o nome do arquivo e tente novamente.");
+            System.exit(1);
         }
         return null;
     }

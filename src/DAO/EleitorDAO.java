@@ -26,9 +26,9 @@ public class EleitorDAO {
             int i = 0;
             while ((idSTR = buffer_entrada.readLine()) != null) {
                 try {
-                    String[] arrayEntrada = idSTR.split(";");
+                    String[] arrayEntrada = idSTR.replace(" ", "").split(";");
                     if (arrayEntrada.length > 5 || arrayEntrada.length < 5){
-                        throw new Exception("Erro De leitura! Dados obrigatórios não foram preenchidos");
+                        throw new Exception("Erro De leitura Arquivo de Eleitores! Dados obrigatórios não foram preenchidos");
                     }
                    this.eleitor = new Eleitor[numeroDeLinhas + 1];
 
@@ -48,6 +48,8 @@ public class EleitorDAO {
             return aux;
         } catch (Exception e) {
             System.out.println("Erro na abertura do Arquivo! \n Verifique o nome do arquivo e tente novamente.");
+            System.exit(1);
+
         }
         return null;
     }

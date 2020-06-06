@@ -31,7 +31,7 @@ public class CandidatosDAO {
 				try {
 					String[] arrayEntrada = idSTR.split(";");
 					if(arrayEntrada.length > 5 || arrayEntrada.length < 5) {
-						throw new Exception("Erro de leitura! Dados obrigatorios n�o foram preenchidos");
+						throw new Exception("Erro de leitura Arquivo de Candidatos! Dados obrigatorios nao foram preenchidos");
 					}
 					this.candidatos = new Candidatos[numeroDeLinhas + 1];
 					
@@ -51,6 +51,7 @@ public class CandidatosDAO {
 			return aux;
 		}catch(Exception e) {
 			System.out.println("Erro na abertura do Arquivo! \n Verifique o nome do arquivo e tente novamente");
+			System.exit(1);
 		}
 		return null;
 	}

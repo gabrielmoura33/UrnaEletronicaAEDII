@@ -7,7 +7,8 @@ public class Candidatos{
 	private String municipio;
 	private String partidoPolitico;
 	private char cargo;
-	
+
+
 	public Candidatos(String nome, double numero, String municipio, String partidoPolitico, char cargo) {
 		this.nome = nome;
 		this.numero = numero;

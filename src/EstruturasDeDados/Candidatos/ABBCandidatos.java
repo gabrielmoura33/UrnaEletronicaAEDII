@@ -1,15 +1,16 @@
-package EstruturasDeDados.Candidatos;  
+package EstruturasDeDados.Candidatos;
 
 import Classes.Candidatos;
 
 public class ABBCandidatos {
-	
+
 	private NodoCandidatos raiz;
-	
+	private Candidatos[] arrayCandidatos;
+
 	public ABBCandidatos() {
 		raiz = null;
 	}
-	
+
 	public Boolean arvoreVazia() {
 		if(this.raiz == null) {
 			return true;
@@ -17,7 +18,7 @@ public class ABBCandidatos {
 			return false;
 		}
 	}
-	
+
 	private NodoCandidatos adicionar(NodoCandidatos raizArvore, Candidatos candidatos) {
 		if(raizArvore == null) {
 			raizArvore = new NodoCandidatos(candidatos);
@@ -28,13 +29,13 @@ public class ABBCandidatos {
 				System.out.println("O Candidato " + candidatos.getNome() + ", cujo o N�mero " + candidatos.getNumero() + ", j� foi inserido anteriormente na �rvore. \n");
 			}
 		}
-	return raizArvore;
+		return raizArvore;
 	}
-	
+
 	public void inserir(Candidatos candidatoNovo) {
 		this.raiz = adicionar(this.raiz, candidatoNovo);
 	}
-	
+
 	private NodoCandidatos antecessor(NodoCandidatos candidatosRetirar, NodoCandidatos raizArvore) {
 		if(raizArvore.direita != null) {
 			raizArvore.direita = antecessor(candidatosRetirar, raizArvore.direita);
@@ -45,16 +46,16 @@ public class ABBCandidatos {
 			candidatosRetirar.item.setMunicipio(raizArvore.item.getMunicipio());
 			candidatosRetirar.item.setPartidoPolitico(raizArvore.item.getPartidoPolitico());
 			candidatosRetirar.item.setCargo(raizArvore.item.getCargo());
-			
+
 			return raizArvore.esquerda;
 		}
 	}
-	
+
 	private NodoCandidatos retirar(NodoCandidatos raizArvore, double numero) {
 		if(raizArvore == null) {
 			System.out.println("O Candidato, cujo o N�mero " + numero + ", n�o foi encontrado");
 			System.out.println("\n");
-			
+
 			return raizArvore;
 		}else {
 			if(raizArvore.item.getNumero() == numero) {
@@ -75,13 +76,13 @@ public class ABBCandidatos {
 				return raizArvore;
 			}
 		}
-		
+
 	}
-	
+
 	public void remover(int matriculaRemover) {
 		this.raiz = retirar(this.raiz, matriculaRemover);
 	}
-	
+
 	public void imprimirMenorMaior(NodoCandidatos raizArvore) {
 		if(raizArvore != null) {
 			imprimirMenorMaior(raizArvore.esquerda);
@@ -92,14 +93,14 @@ public class ABBCandidatos {
 			imprimirMenorMaior(raizArvore.direita);
 		}
 	}
-	
+
 	public void imprimirEmOrdem() {
 		imprimirMenorMaior(this.raiz);
 	}
-	
+
 	public int contarNumCandidatos(NodoCandidatos raizArvore) {
 		int soma = -1;
-		
+
 		if(raizArvore.esquerda != null) {
 			soma += contarNumCandidatos(raizArvore.esquerda);
 		}
@@ -108,8 +109,22 @@ public class ABBCandidatos {
 		}
 		return soma;
 	}
-	
+
 	public int numCandidatos() {
 		return contarNumCandidatos(this.raiz);
+	}
+
+	private Candidatos[] retornaCandidatoMenorMaior(NodoCandidatos raizArvore, int posicao){
+		if (raizArvore != null) {
+			retornaCandidatoMenorMaior(raizArvore.esquerda, posicao + 1);
+			arrayCandidatos[posicao] = raizArvore.item;
+			retornaCandidatoMenorMaior(raizArvore.direita, posicao + 1);
+		}
+		return arrayCandidatos;
+	}
+
+	public Candidatos[] retornaCandidato() {
+		arrayCandidatos = new Candidatos[numCandidatos()];
+		return retornaCandidatoMenorMaior(this.raiz, 0);
 	}
 }

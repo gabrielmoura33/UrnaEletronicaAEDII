@@ -35,7 +35,7 @@ public class ABBEleitor {
                 if (raizArvore.item.getTituloEleitoral() < eleitor.getTituloEleitoral())
                     raizArvore.direita = adicionar(raizArvore.direita, eleitor);
                 else
-                    System.out.println("O Eleitor " + eleitor.getNome() + ", cujo titulo Eleitoral é " + eleitor.getTituloEleitoral() + ", já foi inserido anteriormente na árvore. \n");
+                    System.out.println("O Eleitor " + eleitor.getNome() + ", cujo titulo Eleitoral é " + eleitor.getTituloEleitoral() + ", já foi inserido anteriormente. \n");
             }
         }
         return raizArvore;

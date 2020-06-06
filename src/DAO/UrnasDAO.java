@@ -1,8 +1,10 @@
 package DAO;
 
+import Classes.Candidatos;
 import Classes.Eleitor;
 import Classes.Partido;
 import Classes.Urnas;
+import EstruturasDeDados.Candidatos.ABBCandidatos;
 import EstruturasDeDados.Eleitor.ABBEleitor;
 import EstruturasDeDados.Partido.ABBPartido;
 import EstruturasDeDados.Urnas.PilhaUrna;
@@ -32,13 +34,14 @@ public class UrnasDAO {
                 try {
                     String[] arrayEntrada = idSTR.split(";");
                     if (arrayEntrada.length > 3 || arrayEntrada.length < 3) {
-                        throw new Exception("Erro De leitura! Dados obrigatórios não foram preenchidos");
+                        throw new Exception("Erro De leitura Arquivo de Urnas! Dados obrigatórios não foram preenchidos");
                     }
                     this.urnas = new Urnas[numeroDeLinhas + 1];
 
                     this.urnas[i] = new Urnas();
                     this.urnas[i].setNomeDoMunicípio(arrayEntrada[0]);
-                    this.urnas[i].setSecaoEleitoral(arrayEntrada[1]);
+                    this.urnas[i].setZonaEleitoral(arrayEntrada[1]);
+                    this.urnas[i].setSecaoEleitoral(arrayEntrada[2]);
                     aux.empilhar(urnas[i]);
                 } catch (Exception e) {
                     System.out.println(e);
@@ -56,27 +59,48 @@ public class UrnasDAO {
         Urnas[] urnasCadastradas = urnas.retornaUrnas();
         Eleitor[] arrayEleitor = eleitores.retornaEleitor();
         for (Urnas urna : urnasCadastradas) {
-            String filename = urna.getNomeDoMunicípio().replace(" ", "_") + ".txt";
+            String filename = urna.getNomeDoMunicípio().toLowerCase().replace(" ", "_") + "_" + urna.getSecaoEleitoral() +".txt";
             try (BufferedWriter buffer_saida = new BufferedWriter(new FileWriter(filename))) {
+                buffer_saida.write("secao_eleitoral: ");
+                buffer_saida.write(urna.getZonaEleitoral());
+                buffer_saida.write(";");
+                buffer_saida.newLine();
                 for (Eleitor el : arrayEleitor) {
                     if (el.getSecaoEleitoral().equalsIgnoreCase(urna.getSecaoEleitoral())){
-                        buffer_saida.write(el.getNome());
-                        buffer_saida.write(";");
                         buffer_saida.write(String.valueOf(el.getTituloEleitoral()));
-                        buffer_saida.write(";");
-                        buffer_saida.write(el.getMunicipioEleitoral());
-                        buffer_saida.write(";");
-                        buffer_saida.write(el.getZonaEleitoral());
-                        buffer_saida.write(";");
-                        buffer_saida.write(el.getSecaoEleitoral());
                         buffer_saida.newLine();
                     }
                 }
+                buffer_saida.close();
             } catch (Exception e) {
                 System.out.println("Erro na abertura do Arquivo de Escrita! \n Verifique o nome do arquivo e tente novamente.");
             }
         }
     }
+
+
+    public void cadastraCandidatos(ABBCandidatos candidatos, PilhaUrna urnas){
+        Urnas[] urnasCadastradas = urnas.retornaUrnas();
+        Candidatos[] arrayCandidato = candidatos.retornaCandidato();
+        for (Urnas urna : urnasCadastradas){
+            String filename = urna.getNomeDoMunicípio().replace(" ", "_") + "_Candidatos.txt";
+            try (BufferedWriter buffer_saida = new BufferedWriter(new FileWriter(filename))){
+                for(Candidatos cn : arrayCandidato){
+                    buffer_saida.write(cn.getNome());
+                    buffer_saida.write(";");
+                    buffer_saida.write(String.valueOf(cn.getNumero()));
+                    buffer_saida.write(";");
+                    buffer_saida.write(cn.getCargo());
+                    buffer_saida.newLine();
+                }
+            }
+            catch (Exception e) {
+                System.out.println("Erro na abertura do Arquivo de Escrita! \n Verifique o nome do arquivo e tente novamente.");
+                System.exit(1);
+            }
+        }
+    }
+
 
     public static int countLinesNew(String filename) throws IOException {
         InputStream is = new BufferedInputStream(new FileInputStream(filename));

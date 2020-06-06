@@ -28,7 +28,7 @@ public class MunicipioDAO {
                 try {
                     String[] arrayEntrada = idSTR.split(";");
                     if (arrayEntrada.length > 4 || arrayEntrada.length < 4){
-                        throw new Exception("Erro De leitura! Dados obrigat�rios n�o foram preenchidos");
+                        throw new Exception("Erro De leitura Arquivo de Municipios! Dados obrigat�rios n�o foram preenchidos");
                     }
                    this.municipios = new Municipios[numeroDeLinhas + 1];
 
@@ -47,6 +47,8 @@ public class MunicipioDAO {
             return aux;
         } catch (Exception e) {
             System.out.println("Erro na abertura do Arquivo! \n Verifique o nome do arquivo e tente novamente.");
+            System.exit(1);
+
         }
         return null;
     }
