@@ -1,6 +1,5 @@
 package EstruturasDeDados.Eleitor;
 
-import Classes.Candidatos;
 import Classes.Eleitor;
 
 public class ABBEleitor {
@@ -137,29 +136,52 @@ public class ABBEleitor {
         return contarNumEleitores(this.raiz);
     }
 
-
-    private Eleitor[] retornaEleitorMenorMaior(NodoEleitor raizArvore, int posicao, String zonaEleitoral ){
+    private Eleitor[] retornaEleitorMenorMaior(NodoEleitor raizArvore, int posicao ){
         if (raizArvore != null) {
-            retornaEleitorMenorMaior(raizArvore.esquerda, posicao + 1, zonaEleitoral);
-            if (zonaEleitoral != null){
-                if (raizArvore.item.getZonaEleitoral().equalsIgnoreCase(zonaEleitoral)){
-                    arrayEleitores[posicao] = raizArvore.item;
-                }
-            } else
+            retornaEleitorMenorMaior(raizArvore.esquerda, posicao + 1);
                 arrayEleitores[posicao] = raizArvore.item;
-            retornaEleitorMenorMaior(raizArvore.direita, posicao + 1, zonaEleitoral);
+            retornaEleitorMenorMaior(raizArvore.direita, posicao + 1);
         }
         return arrayEleitores;
     }
 
     public Eleitor[] retornaEleitor() {
         arrayEleitores = new Eleitor[numEleitores()];
-        return retornaEleitorMenorMaior(this.raiz, 0, null);
+        return retornaEleitorMenorMaior(this.raiz, 0);
     }
 
     public Eleitor[] retornaEleitorPorZonaEleitoral (String zonaEleitoral) {
-        arrayEleitores = new Eleitor[numEleitores()];
-        return retornaEleitorMenorMaior(this.raiz, 0, zonaEleitoral);
+        Eleitor[] eleitoresTotais = retornaEleitor();
+        int i = 0;
+        int j  = 0;
+        for (Eleitor el : eleitoresTotais){
+            if (el.getZonaEleitoral().equalsIgnoreCase(zonaEleitoral)){
+                i++;
+            }
+        }
+        Eleitor[] eleitoresPorZona = new Eleitor[i];
+        for (Eleitor el : eleitoresTotais){
+            if (el.getZonaEleitoral().equalsIgnoreCase(zonaEleitoral)){
+                eleitoresPorZona[j] = el;
+                j++;
+            }
+        }
+        return eleitoresPorZona;
     }
+
+
+
+    public Eleitor buscar(double tituloEleitoral){
+        Eleitor[] eleitores = retornaEleitor();
+
+        for (Eleitor el: eleitores) {
+            if (el.getTituloEleitoral() == tituloEleitoral)
+                return el;
+        }
+
+        return null;
+    }
+
+
 
 }

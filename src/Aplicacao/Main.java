@@ -7,6 +7,7 @@ import EstruturasDeDados.Eleitor.ABBEleitor;
 import EstruturasDeDados.Municipios.ListaMunicipios;
 import EstruturasDeDados.Partido.ABBPartido;
 import EstruturasDeDados.Urnas.PilhaUrna;
+import EstruturasDeDados.Votos.ABBVoto;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -45,6 +46,7 @@ public class Main {
                         urnaConfigurada = true;
                     }
                     moduloUrna(moduloTRE);
+
                 }
             }
         } catch (IOException ioe) {
@@ -57,6 +59,9 @@ public class Main {
 
     private static void moduloUrna(ModuloTRE moduloTRE) throws IOException {
         Urnas[] urnasCadastradas = moduloTRE.pilhaUrna.retornaUrnas();
+        Candidatos[] vereadoresPorUrna, prefeitosPorUrna;
+        VotoDAO daoVotos = new VotoDAO("Votos.txt");
+        Voto voto;
 
         int i = 1;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -64,20 +69,69 @@ public class Main {
         while (input != urnasCadastradas.length + 1) {
             System.out.println("Para selecionar uma urna eletronica digite seu codigo de zona eleitoral ou " + ( urnasCadastradas.length + 1 ) + " para SAIR! \n");
             for (Urnas urna : urnasCadastradas) {
-                System.out.println(i + ". "+ urna.getNomeDoMunicípio() + " Zona Eleitoral: "+ urna.getZonaEleitoral());
+                System.out.println(urna.getZonaEleitoral() + ". "+ urna.getNomeDoMunicípio() + " Zona Eleitoral: "+ urna.getZonaEleitoral());
                 i++;
             }
             System.out.println(urnasCadastradas.length + 1 + ". SAIR!");
             input = Integer.parseInt(br.readLine());
-
             Eleitor[] eleitoresVotantes = moduloTRE.abbEleitor.retornaEleitorPorZonaEleitoral(String.valueOf(input));
-            ABBEleitor arvoreEleitoresVotantes = new ABBEleitor();
-            for (Eleitor eleitor : eleitoresVotantes) {
-                arvoreEleitoresVotantes.inserir(eleitor);
+
+            if (eleitoresVotantes.length <= 0){
+                System.out.println("Não existem eleitores para essa zona eleitoral");
+                break;
             }
+
+            ABBEleitor arvoreEleitoresVotantes = new ABBEleitor();
+            for (Eleitor el : eleitoresVotantes) {
+                arvoreEleitoresVotantes.inserir(el);
+            }
+
             System.out.println("Selecione Uma Opçao");
             System.out.println("1. Votar");
             System.out.println("2. Justificar Ausência");
+            int inputSubMenu = Integer.parseInt(br.readLine());
+            switch (inputSubMenu){
+                case 1:
+                    voto = new Voto();
+                    System.out.println("Digite seu título de Eleitor");
+                    double inputSubSubMenu = Double.parseDouble(br.readLine());
+                    Eleitor votante = arvoreEleitoresVotantes.buscar(inputSubSubMenu);
+
+
+                    if (votante == null){
+                        System.out.println("Você nao está configurado para votar nesta Urna!");
+                    } else{
+                        vereadoresPorUrna = moduloTRE.abbCandidatos.retornaCandidatoPorMunicipioECargo(votante.getMunicipioEleitoral());
+                        if (vereadoresPorUrna == null){
+                            System.out.println("Sem candidatos para esse municipio!");
+                        } else {
+                            i = 1;
+                            for (Candidatos vereador : vereadoresPorUrna) {
+                                System.out.println(vereador.getNumero() + ". " + vereador.getNome() + " Cargo: " + vereador.getCargo());
+                                i++;
+                            }
+                            System.out.println("Selecione Um Candidato a Vereador digitando seu número");
+                            double inputVoto = Double.parseDouble(br.readLine());
+                            voto.setNumeroCandidatoVereador(inputVoto);
+                            System.out.println("Selecione Um Candidato a Prefeito digitando seu número");
+                            inputVoto = Double.parseDouble(br.readLine());
+                            voto.setNumeroCanditatoPrefeito(inputVoto);
+                            voto.setJustificouAusencia(false);
+                            voto.setZonaEleitoral(String.valueOf(input));
+                            voto.setTituloEleitoral(votante.getTituloEleitoral());
+                        }
+
+                        daoVotos.armazenaVoto(voto);
+                    }
+                    break;
+                case 2:
+                    System.out.println("Justificou voto!");
+                    break;
+                default:
+                    System.out.println("Opçao inválida!");
+                    break;
+            }
+
 
 
             if(input < 0 || input > urnasCadastradas.length + 2) {
@@ -87,6 +141,8 @@ public class Main {
             }
             i = 1;
         }
+
+        moduloTRE.ImportarDados(daoVotos);
 
 
     }
@@ -144,8 +200,9 @@ class ModuloTRE {
         }
     }
 
-    void ImportarDados() {
-
+    void ImportarDados(VotoDAO votos) {
+        ABBVoto votosTotais = votos.getAll();
+        votos.armazenaVencedor(votosTotais, candidatosDAO.getall());
     }
     void ListarPrefeitosEleitos() {
 

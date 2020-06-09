@@ -61,10 +61,6 @@ public class UrnasDAO {
         for (Urnas urna : urnasCadastradas) {
             String filename = urna.getNomeDoMunicípio().toLowerCase().replace(" ", "_") + "_" + urna.getSecaoEleitoral() +".txt";
             try (BufferedWriter buffer_saida = new BufferedWriter(new FileWriter(filename))) {
-                buffer_saida.write("secao_eleitoral: ");
-                buffer_saida.write(urna.getZonaEleitoral());
-                buffer_saida.write(";");
-                buffer_saida.newLine();
                 for (Eleitor el : arrayEleitor) {
                     if (el.getSecaoEleitoral().equalsIgnoreCase(urna.getSecaoEleitoral())){
                         buffer_saida.write(String.valueOf(el.getTituloEleitoral()));

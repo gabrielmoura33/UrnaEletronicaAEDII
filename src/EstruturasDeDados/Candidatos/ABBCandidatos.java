@@ -1,6 +1,8 @@
 package EstruturasDeDados.Candidatos;
 
 import Classes.Candidatos;
+import Classes.Eleitor;
+import EstruturasDeDados.Eleitor.NodoEleitor;
 
 public class ABBCandidatos {
 
@@ -19,18 +21,25 @@ public class ABBCandidatos {
 		}
 	}
 
-	private NodoCandidatos adicionar(NodoCandidatos raizArvore, Candidatos candidatos) {
-		if(raizArvore == null) {
+	private NodoCandidatos adicionar(NodoCandidatos raizArvore, Candidatos candidatos)
+	{
+		if (raizArvore == null)
 			raizArvore = new NodoCandidatos(candidatos);
-		}else {
-			if(raizArvore.item.getNumero() > candidatos.getNumero()) {
+		else
+		{
+			if (raizArvore.item.getNumero() > candidatos.getNumero())
 				raizArvore.esquerda = adicionar(raizArvore.esquerda, candidatos);
-			}else {
-				System.out.println("O Candidato " + candidatos.getNome() + ", cujo o N�mero " + candidatos.getNumero() + ", j� foi inserido anteriormente na �rvore. \n");
+			else
+			{
+				if (raizArvore.item.getNumero() < candidatos.getNumero())
+					raizArvore.direita = adicionar(raizArvore.direita, candidatos);
+				else
+					System.out.println("O Candidato " + candidatos.getNome() + ", cujo número é " + candidatos.getNumero() + ", já foi inserido anteriormente. \n");
 			}
 		}
 		return raizArvore;
 	}
+
 
 	public void inserir(Candidatos candidatoNovo) {
 		this.raiz = adicionar(this.raiz, candidatoNovo);
@@ -126,5 +135,26 @@ public class ABBCandidatos {
 	public Candidatos[] retornaCandidato() {
 		arrayCandidatos = new Candidatos[numCandidatos()];
 		return retornaCandidatoMenorMaior(this.raiz, 0);
+	}
+
+	public Candidatos[] retornaCandidatoPorMunicipioECargo (String nomeMunicipio) {
+		Candidatos[] candidatosTotais = retornaCandidato();
+		int i = 0;
+		int j = 0;
+
+		for (Candidatos CD : candidatosTotais){
+			if (CD.getMunicipio().trim().replace(" ", "").equalsIgnoreCase(nomeMunicipio)){
+				i++;
+			}
+		}
+		Candidatos[] candidatosPorMunicipio = new Candidatos[i];
+		for (Candidatos candidato : candidatosTotais){
+			if (candidato.getMunicipio().trim().replace(" ", "").equalsIgnoreCase(nomeMunicipio.replace(" ", ""))){
+				candidatosPorMunicipio[j] = candidato;
+				j++;
+			}
+		}
+
+		return candidatosPorMunicipio;
 	}
 }

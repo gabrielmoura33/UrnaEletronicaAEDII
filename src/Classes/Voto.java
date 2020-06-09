@@ -4,17 +4,10 @@ public class Voto {
 
     private double numeroCandidatoVereador;
     private double numeroCanditatoPrefeito;
-
+    private String zonaEleitoral;
     private boolean justificouAusencia;
-    private String secaoEleitoral;
     private double tituloEleitoral;
 
-    public String getSecaoEleitoral() {
-        return secaoEleitoral;
-    }
-    public void setSecaoEleitoral(String secaoEleitoral) {
-        this.secaoEleitoral = secaoEleitoral;
-    }
 
     public void setNumeroCandidatoVereador(double numeroCandidatoVereador) {
         this.numeroCandidatoVereador = numeroCandidatoVereador;
@@ -37,8 +30,7 @@ public class Voto {
         if (this.justificouAusencia)
             return tituloEleitoral;
         else {
-            System.out.println("Impossivel Buscar titulo eleitoral de quem não justificou ausencia!");
-            return 0;
+            return tituloEleitoral;
         }
     }
     public double getNumeroCandidatoVereador() {
@@ -50,10 +42,13 @@ public class Voto {
     }
 
     public void setTituloEleitoral(double tituloEleitoral) {
-        if (this.justificouAusencia)
-            this.tituloEleitoral = tituloEleitoral;
-        else {
-            System.out.println("Impossivel Armazenar titulo eleitoral de quem não justificou ausencia!");
-        }
+        this.tituloEleitoral = tituloEleitoral;
+    }
+    public String getZonaEleitoral() {
+        return zonaEleitoral;
+    }
+
+    public void setZonaEleitoral(String zonaEleitoral) {
+        this.zonaEleitoral = zonaEleitoral;
     }
 }
