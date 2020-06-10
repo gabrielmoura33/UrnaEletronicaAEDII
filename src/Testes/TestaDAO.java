@@ -17,8 +17,7 @@ import java.io.IOException;
 public class TestaDAO {
     public static void main(String[] args) throws IOException {
         try {
-
-            VotoDAO votoDAO = new VotoDAO("Votos.txt");
+            VotoDAO votoDAO = new VotoDAO("VotosGerais.txt");
             UrnasDAO urnasDAO = new UrnasDAO("urnas.txt");
             CandidatosDAO candidatosDAO = new CandidatosDAO("candidatos.txt");
             votoDAO.armazenaVencedor(votoDAO.getAll(),candidatosDAO.getall(), urnasDAO.getAll());

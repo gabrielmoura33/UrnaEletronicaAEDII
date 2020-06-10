@@ -1,0 +1,11 @@
+Nome: Monteiro Lobato ;Numero: 11.0 ;Cargo: P ;Votos: 0
+Nome: Vinicius de Morais ;Numero: 13.0 ;Cargo: P ;Votos: 0
+Nome: Tiradentes ;Numero: 11012.0 ;Cargo: V ;Votos: 2
+Nome: Rui Barbosa ;Numero: 11324.0 ;Cargo: V ;Votos: 0
+Nome: Tom Jobim ;Numero: 11820.0 ;Cargo: V ;Votos: 0
+Nome: Marilia de Dirceu ;Numero: 11871.0 ;Cargo: V ;Votos: 0
+Nome: Clarice Lispector ;Numero: 13098.0 ;Cargo: V ;Votos: 0
+Nome: Tarsila do Amaral ;Numero: 13298.0 ;Cargo: V ;Votos: 0
+Nome: Cecilia Meireles ;Numero: 13435.0 ;Cargo: V ;Votos: 0
+Nome: Carlos Drumond de Andrade ;Numero: 13560.0 ;Cargo: V ;Votos: 0
+

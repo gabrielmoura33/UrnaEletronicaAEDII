@@ -77,17 +77,24 @@ public class ABBVoto {
 
     public Voto[] retornaVotos() {
         arrayVotos = new Voto[numVotos()];
+        this.root = 0;
         return retornaVotosMaiorMenor(this.raiz);
     }
 
     public Voto[] retornaVotosPorZonaEleitoral (String zonaEleitoral) {
         Voto[] eleitoresTotais = retornaVotos();
-        Voto[] eleitoresPorZona = new Voto[eleitoresTotais.length];
         int i = 0;
+        int j = 0;
         for (Voto el : eleitoresTotais){
             if (el.getZonaEleitoral().equals(zonaEleitoral)){
-                eleitoresPorZona[i] = el;
                 i++;
+            }
+        }
+        Voto[] eleitoresPorZona = new Voto[i];
+        for (Voto ul : eleitoresTotais){
+            if (ul.getZonaEleitoral().equals(zonaEleitoral)){
+                eleitoresPorZona[j] = ul;
+                j++;
             }
         }
         return eleitoresPorZona;

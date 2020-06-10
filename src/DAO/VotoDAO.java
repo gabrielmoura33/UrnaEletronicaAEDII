@@ -39,7 +39,7 @@ public class VotoDAO {
                     this.votos[i] = new Voto();
                     this.votos[i].setTituloEleitoral(Double.parseDouble(arrayEntrada[0]));
                     this.votos[i].setNumeroCandidatoVereador(Double.parseDouble(arrayEntrada[1]));
-                    this.votos[i].setNumeroCandidatoVereador(Double.parseDouble(arrayEntrada[2]));
+                    this.votos[i].setNumeroCanditatoPrefeito(Double.parseDouble(arrayEntrada[2]));
                     this.votos[i].setZonaEleitoral(arrayEntrada[3]);
                     aux.inserir(votos[i]);
                 } catch (Exception e) {
@@ -91,7 +91,7 @@ public class VotoDAO {
     }
 
     public void armazenaVoto(Voto[] votosGerais){
-            String filename = "Votos.txt";
+            String filename = "VotosGerais.txt";
             try (BufferedWriter buffer_saida = new BufferedWriter(new FileWriter(filename))){
                 for (Voto voto : votosGerais){
                     BigDecimal val = new BigDecimal(voto.getTituloEleitoral());
@@ -114,8 +114,10 @@ public class VotoDAO {
     public void armazenaVencedor(ABBVoto votos, ABBCandidatos candidatos, PilhaUrna urnas){
         Candidatos[] arrayCandidato = candidatos.retornaCandidato();
         Urnas[] arrayUrnas = urnas.retornaUrnas();
+        Voto[] arrayVotos;
         for (Urnas urna : arrayUrnas){
-            String filename = urna.getNomeDoMunicípio()+ "_" + urna.getZonaEleitoral() + ".txt";
+            String filename = urna.getNomeDoMunicípio()+ "_" + urna.getZonaEleitoral() + "_Resultado.txt";
+
             try (BufferedWriter buffer_saida = new BufferedWriter(new FileWriter(filename))){
                 for(Candidatos cn : arrayCandidato){
                     buffer_saida.write("Nome: ");

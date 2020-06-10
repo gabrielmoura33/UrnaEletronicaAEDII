@@ -16,6 +16,7 @@ import java.io.InputStreamReader;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        VotoDAO daoVotos = new VotoDAO("VotosGerais.txt");
         int input = 0;
         ModuloTRE moduloTRE = null;
         boolean urnaConfigurada = false;
@@ -35,6 +36,7 @@ public class Main {
                     System.out.println("Opção Selecionada inválida! Tente Novamente\r\n");
                 } else if(input == 3) {
                     System.out.println("Você saiu do programa\r\n");
+                    moduloTRE.ImportarDados(daoVotos);
                     System.exit(1);
                 } else if (input == 1){
                     moduloTRE = new ModuloTRE();
@@ -46,7 +48,6 @@ public class Main {
                         urnaConfigurada = true;
                     }
                     moduloUrna(moduloTRE);
-
                 }
             }
         } catch (IOException ioe) {
@@ -74,7 +75,9 @@ public class Main {
             }
             System.out.println(urnasCadastradas.length + 1 + ". SAIR!");
             String selecao = br.readLine();
+
             Eleitor[] eleitoresVotantes = moduloTRE.abbEleitor.retornaEleitorPorZonaEleitoral(String.valueOf(selecao));
+
             input = Integer.parseInt(selecao);
 
             if (eleitoresVotantes.length <= 0){
@@ -146,9 +149,6 @@ public class Main {
         }
 
         daoVotos.armazenaVoto(arvoreVotos.retornaVotos());
-        moduloTRE.ImportarDados(daoVotos);
-
-
     }
 }
 
@@ -205,7 +205,7 @@ class ModuloTRE {
     }
 
     void ImportarDados(VotoDAO votos) {
-        votos.armazenaVencedor(votos.getAll(), candidatosDAO.getall(), urnasDAO.getAll());
+        votos.armazenaVencedor(votos.getAll(), abbCandidatos, pilhaUrna);
     }
     void ListarPrefeitosEleitos() {
 
