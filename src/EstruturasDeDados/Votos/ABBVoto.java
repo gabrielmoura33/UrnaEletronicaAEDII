@@ -86,7 +86,7 @@ public class ABBVoto {
         int i = 0;
         int j = 0;
         for (Voto el : eleitoresTotais){
-            if (el.getZonaEleitoral().equals(zonaEleitoral)){
+            if (el.getZonaEleitoral().equals(zonaEleitoral) && !el.JustificouAusencia()){
                 i++;
             }
         }
@@ -100,15 +100,36 @@ public class ABBVoto {
         return eleitoresPorZona;
     }
 
+    public Voto[] retornaJustificativasTotais () {
+        Voto[] eleitoresTotais = retornaVotos();
+        int i = 0;
+        int j = 0;
+        for (Voto el : eleitoresTotais){
+            if (el.JustificouAusencia()){
+                i++;
+            }
+        }
+        Voto[] justificativasTotais = new Voto[i];
+        for (Voto el : eleitoresTotais){
+            if (el.JustificouAusencia()){
+                justificativasTotais[i] = el;
+            }
+        }
+
+        return justificativasTotais;
+    }
+
     public int retornaQuantidadeVotos(Voto[] zonaEleitoral, double numeroCandidato){
         int quantidade = 0;
         for (Voto voto : zonaEleitoral){
-            if (voto.getNumeroCanditatoPrefeito() == numeroCandidato || voto.getNumeroCandidatoVereador() == numeroCandidato){
+            if (voto.getNumeroCanditatoPrefeito() == numeroCandidato || voto.getNumeroCandidatoVereador() == numeroCandidato && !voto.JustificouAusencia()){
                 quantidade ++;
             }
         }
         return quantidade;
     }
+
+
 
 
 

@@ -153,7 +153,7 @@ public class ABBEleitor {
 
     public Eleitor[] retornaEleitor() {
         arrayEleitores = new Eleitor[numEleitores()];
-
+        this.root = 0;
         return retornaEleitorMenorMaior(this.raiz);
     }
 
@@ -181,7 +181,6 @@ public class ABBEleitor {
 
     public Eleitor buscar(double tituloEleitoral){
         Eleitor[] eleitores = retornaEleitor();
-
         for (Eleitor el: eleitores) {
             if (el.getTituloEleitoral() == tituloEleitoral)
                 return el;

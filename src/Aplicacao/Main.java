@@ -100,8 +100,6 @@ public class Main {
                     System.out.println("Digite seu título de Eleitor");
                     double inputSubSubMenu = Double.parseDouble(br.readLine());
                     Eleitor votante = arvoreEleitoresVotantes.buscar(inputSubSubMenu);
-
-
                     if (votante == null){
                         System.out.println("Você nao está configurado para votar nesta Urna!");
                     } else{
@@ -133,7 +131,19 @@ public class Main {
                     }
                     break;
                 case 2:
-                    System.out.println("Justificou voto!");
+                    System.out.println("Digite seu título de Eleitor");
+                    inputSubSubMenu = Double.parseDouble(br.readLine());
+                    votante = moduloTRE.abbEleitor.buscar(inputSubSubMenu);
+                    if (votante == null){
+                        System.out.println("Você nao está configurado no TRE para votar nesta Urna!");
+                    } else {
+                        System.out.println("Voto Justificado!");
+                        voto = new Voto();
+                        voto.setTituloEleitoral(votante.getTituloEleitoral());
+                        voto.setJustificouAusencia(true);
+                        arvoreVotos.inserir(voto);
+                    }
+
                     break;
                 default:
                     System.out.println("Opçao inválida!");
@@ -206,6 +216,7 @@ class ModuloTRE {
 
     void ImportarDados(VotoDAO votos) {
         votos.armazenaVencedor(votos.getAll(), abbCandidatos, pilhaUrna);
+        votos.armazenaAusencia(votos.getAll());
     }
     void ListarPrefeitosEleitos() {
 

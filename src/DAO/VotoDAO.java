@@ -111,6 +111,9 @@ public class VotoDAO {
             }
     }
 
+    public void armazenaJustificativas(ABBVoto abbVoto){
+        Voto[] justificativasGerais = abbVoto.retornaJustificativasTotais();
+    }
     public void armazenaVencedor(ABBVoto votos, ABBCandidatos candidatos, PilhaUrna urnas){
         Candidatos[] arrayCandidato = candidatos.retornaCandidato();
         Urnas[] arrayUrnas = urnas.retornaUrnas();
@@ -140,13 +143,16 @@ public class VotoDAO {
             }
         }
     }
-        public void armazenaAusencia(Voto voto){
 
+    public void armazenaAusencia(ABBVoto abbVoto){
+        Voto[] justificativasGerais = abbVoto.retornaJustificativasTotais();
         String filename = "Ausencias.txt";
         try (BufferedWriter buffer_saida = new BufferedWriter(new FileWriter(filename))){
-            buffer_saida.write(String.valueOf(voto.getTituloEleitoral()));
-            buffer_saida.write(";");
-            buffer_saida.newLine();
+            for (Voto justificativa : justificativasGerais){
+                buffer_saida.write(String.valueOf(justificativa.getTituloEleitoral()));
+                buffer_saida.write(";");
+                buffer_saida.newLine();
+            }
         }
         catch (Exception e) {
             System.out.println("Erro na abertura do Arquivo de Escrita! \n Verifique o nome do arquivo e tente novamente.");
