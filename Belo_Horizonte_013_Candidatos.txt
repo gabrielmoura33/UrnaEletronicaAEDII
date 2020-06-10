@@ -1,0 +1,6 @@
+Monteiro Lobato;11;P
+Vinicius de Morais;13;P
+Rui Barbosa;11324;V
+Tom Jobim;11820;V
+Clarice Lispector;13098;V
+Cecilia Meireles;13435;V

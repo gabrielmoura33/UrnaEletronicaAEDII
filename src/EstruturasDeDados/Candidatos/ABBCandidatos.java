@@ -136,6 +136,7 @@ public class ABBCandidatos {
 
 	public Candidatos[] retornaCandidato() {
 		arrayCandidatos = new Candidatos[numCandidatos()];
+		this.root = 0;
 		return retornaCandidatoMenorMaior(this.raiz);
 	}
 
@@ -158,5 +159,15 @@ public class ABBCandidatos {
 		}
 
 		return candidatosPorMunicipio;
+	}
+
+
+	public boolean candidatoPorCargo (Candidatos[] candidatos, char cargo){
+		for (Candidatos cand : candidatos){
+			if (cand.getCargo() == cargo){
+				return true;
+			}
+		}
+		return false;
 	}
 }

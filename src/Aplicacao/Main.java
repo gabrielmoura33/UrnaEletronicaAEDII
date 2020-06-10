@@ -59,7 +59,7 @@ public class Main {
 
     private static void moduloUrna(ModuloTRE moduloTRE) throws IOException {
         Urnas[] urnasCadastradas = moduloTRE.pilhaUrna.retornaUrnas();
-        Candidatos[] vereadoresPorUrna, prefeitosPorUrna;
+        Candidatos[] candidatosPorUrna;
         VotoDAO daoVotos = new VotoDAO("Votos.txt");
         Voto voto;
 
@@ -73,8 +73,9 @@ public class Main {
                 i++;
             }
             System.out.println(urnasCadastradas.length + 1 + ". SAIR!");
-            input = Integer.parseInt(br.readLine());
-            Eleitor[] eleitoresVotantes = moduloTRE.abbEleitor.retornaEleitorPorZonaEleitoral(String.valueOf(input));
+            String selecao = br.readLine();
+            Eleitor[] eleitoresVotantes = moduloTRE.abbEleitor.retornaEleitorPorZonaEleitoral(String.valueOf(selecao));
+            input = Integer.parseInt(selecao);
 
             if (eleitoresVotantes.length <= 0){
                 System.out.println("Não existem eleitores para essa zona eleitoral");
@@ -101,26 +102,29 @@ public class Main {
                     if (votante == null){
                         System.out.println("Você nao está configurado para votar nesta Urna!");
                     } else{
-                        vereadoresPorUrna = moduloTRE.abbCandidatos.retornaCandidatoPorMunicipioECargo(votante.getMunicipioEleitoral());
-                        if (vereadoresPorUrna == null){
+                        candidatosPorUrna = moduloTRE.abbCandidatos.retornaCandidatoPorMunicipioECargo(votante.getMunicipioEleitoral());
+                        if (candidatosPorUrna == null){
                             System.out.println("Sem candidatos para esse municipio!");
                         } else {
                             i = 1;
-                            for (Candidatos vereador : vereadoresPorUrna) {
+                            for (Candidatos vereador : candidatosPorUrna) {
                                 System.out.println(vereador.getNumero() + ". " + vereador.getNome() + " Cargo: " + vereador.getCargo());
                                 i++;
                             }
-                            System.out.println("Selecione Um Candidato a Vereador digitando seu número");
-                            double inputVoto = Double.parseDouble(br.readLine());
-                            voto.setNumeroCandidatoVereador(inputVoto);
-                            System.out.println("Selecione Um Candidato a Prefeito digitando seu número");
-                            inputVoto = Double.parseDouble(br.readLine());
-                            voto.setNumeroCanditatoPrefeito(inputVoto);
+                            if (moduloTRE.abbCandidatos.candidatoPorCargo(candidatosPorUrna, 'V')){
+                                System.out.println("Selecione Um Candidato a Vereador digitando seu número");
+                                String inputVoto = br.readLine();
+                                voto.setNumeroCandidatoVereador(Double.valueOf(inputVoto));
+                            }
+                            if (moduloTRE.abbCandidatos.candidatoPorCargo(candidatosPorUrna, 'P')){
+                                System.out.println("Selecione Um Candidato a Prefeito digitando seu número");
+                                String inputVoto = br.readLine();
+                                voto.setNumeroCanditatoPrefeito(Double.valueOf(inputVoto));
+                            }
                             voto.setJustificouAusencia(false);
-                            voto.setZonaEleitoral(String.valueOf(input));
+                            voto.setZonaEleitoral(selecao);
                             voto.setTituloEleitoral(votante.getTituloEleitoral());
                         }
-
                         daoVotos.armazenaVoto(voto);
                     }
                     break;

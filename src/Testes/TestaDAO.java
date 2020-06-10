@@ -48,13 +48,14 @@ public class TestaDAO {
 //                System.out.println(cand.getNome());
 //            }
 
+
+//            var eleitoresDAO = new EleitorDAO("eleitores.txt");
+//            ABBEleitor arvoreCandidato = eleitoresDAO.getAll();
 //
-//            var candidatosDAO = new CandidatosDAO("candidatos.txt");
-//            ABBCandidatos arvoreCandidato = candidatosDAO.getall();
-////
-//            for (Candidatos cand : arvoreCandidato.retornaCandidato()){
-//                System.out.println(cand.getNome());
+//            for (Eleitor el : eleitoresDAO.getAll().retornaEleitorPorZonaEleitoral("001")){
+//                System.out.println(el.getNome());
 //            }
+
 //            var urnasDAO = new UrnasDAO("urnas.txt");
 ////
 //            urnasDAO.cadastraCandidatos(candidatosDAO.getall(), urnasDAO.getAll());
@@ -62,7 +63,12 @@ public class TestaDAO {
 
 //            var candidatosDAO = new CandidatosDAO("candidatos.txt");
 //            ABBCandidatos arvoreCandidato = candidatosDAO.getall();
-//            arvoreCandidato.imprimirEmOrdem();
+
+//            System.out.println(arvoreCandidato.candidatoPorCargo(arvoreCandidato.retornaCandidatoPorMunicipioECargo("Santos Dummont"), 'P'));
+
+//            for (Candidatos cand : arvoreCandidato.retornaCandidatoPorMunicipioECargo("SantosDumont")){
+//                System.out.println(cand.getNome());
+//            }
 
 //             var municipioDAO = new MunicipioDAO("municipios.txt");
 //             ListaMunicipios listaMunicipios = municipioDAO.getAll();

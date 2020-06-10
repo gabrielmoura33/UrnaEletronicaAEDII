@@ -154,6 +154,7 @@ public class ABBEleitor {
     }
 
     public Eleitor[] retornaEleitorPorZonaEleitoral (String zonaEleitoral) {
+        this.root = 0;
         Eleitor[] eleitoresTotais = retornaEleitor();
         int i = 0;
         int j  = 0;
