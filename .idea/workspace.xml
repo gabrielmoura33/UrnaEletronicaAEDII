@@ -2,37 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ef3e9db-e756-4229-84bc-41b49ac7cd92" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/1795_VotosTotais.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Belo_Horizonte_Candidatos.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Curitiba_Candidatos.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Distrito_Federal_Candidatos.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Juiz_de_Fora_Candidatos.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Votos.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/belo_horizonte_213716.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/curitiba_12323.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/distrito_federal_12323.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/juiz_de_fora_83712.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DAO/VotoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EstruturasDeDados/Votos/ABBVoto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EstruturasDeDados/Votos/NodoVoto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Belo_Horizonte_013_Candidatos.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Belo_Horizonte_140_Candidatos.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Santos_Dumont_001_Candidatos.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/belo_horizonte_013.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/belo_horizonte_140.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/partidos.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/santos_dumont_001.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1795_VotosTotais.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Belo_Horizonte_Candidatos.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Curitiba_Candidatos.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Distrito_Federal_Candidatos.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juiz_de_Fora_Candidatos.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Votos.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/belo_horizonte_213716.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/candidatos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/candidatos.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/curitiba_12323.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/distrito_federal_12323.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/eleitores.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eleitores.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UrnaEletronica/Aplicacao/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UrnaEletronica/Aplicacao/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juiz_de_fora_83712.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/municipios.txt" beforeDir="false" afterPath="$PROJECT_DIR$/municipios.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/UrnaEletronica/Aplicacao/ModuloTRE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UrnaEletronica/Aplicacao/ModuloTRE.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UrnaEletronica/Classes/Voto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UrnaEletronica/Classes/Voto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UrnaEletronica/DAO/CandidatosDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UrnaEletronica/DAO/CandidatosDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/UrnaEletronica/DAO/UrnasDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UrnaEletronica/DAO/UrnasDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UrnaEletronica/EstruturasDeDados/Candidatos/ABBCandidatos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UrnaEletronica/EstruturasDeDados/Candidatos/ABBCandidatos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UrnaEletronica/EstruturasDeDados/Eleitor/ABBEleitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UrnaEletronica/EstruturasDeDados/Eleitor/ABBEleitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/UrnaEletronica/Testes/TestaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UrnaEletronica/Testes/TestaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/partido.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aplicacao/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aplicacao/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/Voto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/Voto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/CandidatosDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/CandidatosDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DAO/UrnasDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/UrnasDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EstruturasDeDados/Candidatos/ABBCandidatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EstruturasDeDados/Candidatos/ABBCandidatos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EstruturasDeDados/Eleitor/ABBEleitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EstruturasDeDados/Eleitor/ABBEleitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EstruturasDeDados/Votos/CelulaVotos.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EstruturasDeDados/Votos/ListaVotos.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Testes/TestaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Testes/TestaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/urnas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/urnas.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +63,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/EstruturasDeDados/Votos" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -137,48 +139,48 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800@0.0.1280.800" timestamp="1591654893923" />
-    <state x="378" y="119" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1591662800523">
+    <state x="378" y="119" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1591748423004">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="378" y="119" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1280.800@0.0.1280.800" timestamp="1591662800523" />
+    <state x="378" y="119" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1280.800@0.0.1280.800" timestamp="1591748423004" />
     <state x="378" y="128" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.23.1280.706@0.23.1280.706" timestamp="1591462735536" />
     <state x="378" y="129" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.23.1280.710@0.23.1280.710" timestamp="1590360726250" />
-    <state width="1238" height="173" key="GridCell.Tab.0.bottom" timestamp="1591675927532">
+    <state width="1238" height="173" key="GridCell.Tab.0.bottom" timestamp="1591751808754">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="173" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1591675927532" />
+    <state width="1238" height="173" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1591751808754" />
     <state width="1238" height="173" key="GridCell.Tab.0.bottom/0.23.1280.705@0.23.1280.705" timestamp="1591481497315" />
     <state width="1238" height="173" key="GridCell.Tab.0.bottom/0.23.1280.706@0.23.1280.706" timestamp="1591460273644" />
     <state width="1238" height="173" key="GridCell.Tab.0.bottom/0.23.1280.708@0.23.1280.708" timestamp="1591053454122" />
     <state width="1238" height="173" key="GridCell.Tab.0.bottom/0.23.1280.710@0.23.1280.710" timestamp="1591648573751" />
-    <state width="1238" height="173" key="GridCell.Tab.0.bottom/0.23.1280.713@0.23.1280.713" timestamp="1591653210169" />
-    <state width="1238" height="173" key="GridCell.Tab.0.center" timestamp="1591675927530">
+    <state width="1238" height="173" key="GridCell.Tab.0.bottom/0.23.1280.713@0.23.1280.713" timestamp="1591751598613" />
+    <state width="1238" height="173" key="GridCell.Tab.0.center" timestamp="1591751808751">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="173" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1591675927530" />
+    <state width="1238" height="173" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1591751808751" />
     <state width="1238" height="173" key="GridCell.Tab.0.center/0.23.1280.705@0.23.1280.705" timestamp="1591481497315" />
     <state width="1238" height="173" key="GridCell.Tab.0.center/0.23.1280.706@0.23.1280.706" timestamp="1591460273643" />
     <state width="1238" height="173" key="GridCell.Tab.0.center/0.23.1280.708@0.23.1280.708" timestamp="1591053454121" />
     <state width="1238" height="173" key="GridCell.Tab.0.center/0.23.1280.710@0.23.1280.710" timestamp="1591648573749" />
-    <state width="1238" height="173" key="GridCell.Tab.0.center/0.23.1280.713@0.23.1280.713" timestamp="1591653210167" />
-    <state width="1238" height="173" key="GridCell.Tab.0.left" timestamp="1591675927529">
+    <state width="1238" height="173" key="GridCell.Tab.0.center/0.23.1280.713@0.23.1280.713" timestamp="1591751598575" />
+    <state width="1238" height="173" key="GridCell.Tab.0.left" timestamp="1591751808750">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="173" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1591675927529" />
+    <state width="1238" height="173" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1591751808750" />
     <state width="1238" height="173" key="GridCell.Tab.0.left/0.23.1280.705@0.23.1280.705" timestamp="1591481497314" />
     <state width="1238" height="173" key="GridCell.Tab.0.left/0.23.1280.706@0.23.1280.706" timestamp="1591460273643" />
     <state width="1238" height="173" key="GridCell.Tab.0.left/0.23.1280.708@0.23.1280.708" timestamp="1591053454121" />
     <state width="1238" height="173" key="GridCell.Tab.0.left/0.23.1280.710@0.23.1280.710" timestamp="1591648573748" />
-    <state width="1238" height="173" key="GridCell.Tab.0.left/0.23.1280.713@0.23.1280.713" timestamp="1591653210166" />
-    <state width="1238" height="173" key="GridCell.Tab.0.right" timestamp="1591675927531">
+    <state width="1238" height="173" key="GridCell.Tab.0.left/0.23.1280.713@0.23.1280.713" timestamp="1591751598557" />
+    <state width="1238" height="173" key="GridCell.Tab.0.right" timestamp="1591751808752">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="173" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1591675927531" />
+    <state width="1238" height="173" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1591751808752" />
     <state width="1238" height="173" key="GridCell.Tab.0.right/0.23.1280.705@0.23.1280.705" timestamp="1591481497315" />
     <state width="1238" height="173" key="GridCell.Tab.0.right/0.23.1280.706@0.23.1280.706" timestamp="1591460273644" />
     <state width="1238" height="173" key="GridCell.Tab.0.right/0.23.1280.708@0.23.1280.708" timestamp="1591053454122" />
     <state width="1238" height="173" key="GridCell.Tab.0.right/0.23.1280.710@0.23.1280.710" timestamp="1591648573750" />
-    <state width="1238" height="173" key="GridCell.Tab.0.right/0.23.1280.713@0.23.1280.713" timestamp="1591653210168" />
+    <state width="1238" height="173" key="GridCell.Tab.0.right/0.23.1280.713@0.23.1280.713" timestamp="1591751598606" />
     <state width="1238" height="263" key="GridCell.Tab.1.bottom" timestamp="1591670371149">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -195,6 +197,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state width="1238" height="263" key="GridCell.Tab.1.right/0.0.1280.800@0.0.1280.800" timestamp="1591670371148" />
+    <state x="298" y="22" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1591750443000">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="298" y="22" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1280.800@0.0.1280.800" timestamp="1591750443000" />
     <state x="348" y="23" key="refactoring.ChangeSignatureDialog" timestamp="1591461107483">
       <screen x="0" y="23" width="1280" height="706" />
     </state>

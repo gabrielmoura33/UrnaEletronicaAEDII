@@ -7,6 +7,7 @@ import EstruturasDeDados.Eleitor.NodoEleitor;
 public class ABBCandidatos {
 
 	private NodoCandidatos raiz;
+	private int root = 0;
 	private Candidatos[] arrayCandidatos;
 
 	public ABBCandidatos() {
@@ -123,18 +124,19 @@ public class ABBCandidatos {
 		return contarNumCandidatos(this.raiz);
 	}
 
-	private Candidatos[] retornaCandidatoMenorMaior(NodoCandidatos raizArvore, int posicao){
+	private Candidatos[] retornaCandidatoMenorMaior(NodoCandidatos raizArvore){
 		if (raizArvore != null) {
-			retornaCandidatoMenorMaior(raizArvore.esquerda, posicao + 1);
-			arrayCandidatos[posicao] = raizArvore.item;
-			retornaCandidatoMenorMaior(raizArvore.direita, posicao + 1);
+			retornaCandidatoMenorMaior(raizArvore.esquerda);
+			arrayCandidatos[root] = raizArvore.item;
+			root ++;
+			retornaCandidatoMenorMaior(raizArvore.direita);
 		}
 		return arrayCandidatos;
 	}
 
 	public Candidatos[] retornaCandidato() {
 		arrayCandidatos = new Candidatos[numCandidatos()];
-		return retornaCandidatoMenorMaior(this.raiz, 0);
+		return retornaCandidatoMenorMaior(this.raiz);
 	}
 
 	public Candidatos[] retornaCandidatoPorMunicipioECargo (String nomeMunicipio) {

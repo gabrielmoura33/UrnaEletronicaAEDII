@@ -1,1 +1,2 @@
-Belo Horizonte; MG; 127000; 24;
+Belo Horizonte;MG;6000000;40
+Santos Dumont;MG;50000;12

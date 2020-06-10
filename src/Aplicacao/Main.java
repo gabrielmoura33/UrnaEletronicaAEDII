@@ -184,7 +184,7 @@ class ModuloTRE {
 
             System.out.println("4. Digite o nome do arquivo de Partidos");
 //            partidoDAO = new PartidoDAO(br.readLine());
-            partidoDAO = new PartidoDAO("partido.txt");
+            partidoDAO = new PartidoDAO("partidos.txt");
             abbPartido = partidoDAO.getAll();
 
             System.out.println("5. Digite o nome do arquivo de Urnas");

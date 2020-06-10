@@ -48,17 +48,15 @@ public class TestaDAO {
 //                System.out.println(cand.getNome());
 //            }
 
-
-            var candidatosDAO = new CandidatosDAO("candidatos.txt");
-            ABBCandidatos arvoreCandidato = candidatosDAO.getall();
-            VotoDAO votoDAO = new VotoDAO("Votos.txt");
-            ABBVoto abbVoto = votoDAO.getAll();
-
-            Voto[] arrVoto = abbVoto.retornaVotosPorZonaEleitoral("1795");
-            votoDAO.armazenaVencedor(abbVoto, arvoreCandidato);
-
-//            var urnasDAO = new UrnasDAO("urnas.txt");
 //
+//            var candidatosDAO = new CandidatosDAO("candidatos.txt");
+//            ABBCandidatos arvoreCandidato = candidatosDAO.getall();
+////
+//            for (Candidatos cand : arvoreCandidato.retornaCandidato()){
+//                System.out.println(cand.getNome());
+//            }
+//            var urnasDAO = new UrnasDAO("urnas.txt");
+////
 //            urnasDAO.cadastraCandidatos(candidatosDAO.getall(), urnasDAO.getAll());
 
 

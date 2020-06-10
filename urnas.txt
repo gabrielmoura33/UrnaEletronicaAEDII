@@ -1,4 +1,4 @@
-Belo Horizonte;1795;213716
-Juiz de Fora;1856;83712
-Curitiba;123321;12323
-Distrito Federal;123123;12323
+Belo Horizonte;013;0052
+Belo Horizonte;013;0050
+Belo Horizonte;140;0033
+Santos Dumont;001;0072

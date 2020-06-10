@@ -1,2 +1,12 @@
-Gabriel De Moura e Souza; 1795; Belo Horizonte; PDT; V;
-Erica Rocha; 123134; Belo Horizonte; PT; V;
+Monteiro Lobato;11;Belo Horizonte;PV;P
+Rui Barbosa;11324;Belo Horizonte;PV;V
+Tom Jobim;11820;Belo Horizonte;PV;V
+Vinicius de Morais;13;Belo Horizonte;PT;P
+Cecilia Meireles;13435;Belo Horizonte;PT;V
+Clarice Lispector;13098;Belo Horizonte;PT;V
+Tomas Gonzaga;11;Santos Dumont;PV;P
+Marilia de Dirceu;11871;Santos Dumont;PV;V
+Tiradentes;11012;Santos Dumont;PV;V
+Fernando Pessoa;13;Santos Dumont;PT;P
+Carlos Drumond de Andrade;13560;Santos Dumont;PT;V
+Tarsila do Amaral;13298;Santos Dumont;PT;V

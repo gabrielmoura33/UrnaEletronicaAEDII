@@ -1,7 +1,7 @@
-Jose; 19831; Minas Gerais; 337776; 213716;
-Gabriel; 22222;Belo Horizonte; 1795; 213716;
-Daniela; 23131; Sao Jose do Rio Preto; 1795; 213716;
-Daniela; 23131; Sao Jose do Rio Preto; 1795; 12321321;
-Petrusca; 231231; Sao Jose do Rio Preto; 1795; 12321321;
-Cataruba; 12323123; Sao Jose do Rio Preto; 12213; 12321321;
-Josiuda; 43364534; Sao Jose do Rio Preto; 12213; 213716;
+Vinicius de Morais;11452890;Belo Horizonte;013;0052
+Mauricio de Sousa;90120098;Belo Horizonte;013;0052
+Monteiro Lobato;25145517;Belo Horizonte;013;0050
+Tatiana Belink;09812399;Belo Horizonte;013;0050
+Ana Maria Machado;19182830;Belo Horizonte;140;0033
+Bia Bedran;09218876;Santos Dumont;001;0072
+Ziraldo;98776509;Santos Dumont;001;0072

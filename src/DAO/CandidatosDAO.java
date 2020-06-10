@@ -30,18 +30,18 @@ public class CandidatosDAO {
 			while((idSTR = buffer_entrada.readLine()) != null) {
 				try {
 					String[] arrayEntrada = idSTR.split(";");
+//					System.out.println(arrayEntrada.length);
 					if(arrayEntrada.length > 5 || arrayEntrada.length < 5) {
 						throw new Exception("Erro de leitura Arquivo de Candidatos! Dados obrigatorios nao foram preenchidos");
 					}
 					this.candidatos = new Candidatos[numeroDeLinhas + 1];
-					
 					this.candidatos[i] = new Candidatos();
 					this.candidatos[i].setNome(arrayEntrada[0]);
 					this.candidatos[i].setNumero(Double.parseDouble(arrayEntrada[1]));
 					this.candidatos[i].setMunicipio(arrayEntrada[2]);
 					this.candidatos[i].setPartidoPolitico(arrayEntrada[3]);
-					this.candidatos[i].setCargo(arrayEntrada[4].charAt(1));
-					
+					this.candidatos[i].setCargo(arrayEntrada[4].charAt(0));
+
 					aux.inserir(candidatos[i]);
 				}catch(Exception e) {
 					System.out.println(e);

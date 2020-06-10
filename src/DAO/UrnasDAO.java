@@ -10,6 +10,8 @@ import EstruturasDeDados.Partido.ABBPartido;
 import EstruturasDeDados.Urnas.PilhaUrna;
 
 import java.io.*;
+import java.math.BigDecimal;
+import java.util.Arrays;
 
 public class UrnasDAO {
     private Urnas urnas[];
@@ -59,17 +61,18 @@ public class UrnasDAO {
         Urnas[] urnasCadastradas = urnas.retornaUrnas();
         Eleitor[] arrayEleitor = eleitores.retornaEleitor();
         for (Urnas urna : urnasCadastradas) {
-            String filename = urna.getNomeDoMunicípio().toLowerCase().replace(" ", "_") + "_" + urna.getSecaoEleitoral() +".txt";
+            String filename = urna.getNomeDoMunicípio().toLowerCase().replace(" ", "_") + "_" + urna.getZonaEleitoral() +".txt";
             try (BufferedWriter buffer_saida = new BufferedWriter(new FileWriter(filename))) {
                 for (Eleitor el : arrayEleitor) {
                     if (el.getSecaoEleitoral().equalsIgnoreCase(urna.getSecaoEleitoral())){
-                        buffer_saida.write(String.valueOf(el.getTituloEleitoral()));
+                        BigDecimal val = new BigDecimal(el.getTituloEleitoral());
+                        buffer_saida.write(val.toString());
                         buffer_saida.newLine();
                     }
                 }
                 buffer_saida.close();
             } catch (Exception e) {
-                System.out.println("Erro na abertura do Arquivo de Escrita! \n Verifique o nome do arquivo e tente novamente.");
+                System.out.println(e);
             }
         }
     }
@@ -79,16 +82,20 @@ public class UrnasDAO {
         Urnas[] urnasCadastradas = urnas.retornaUrnas();
         Candidatos[] arrayCandidato = candidatos.retornaCandidato();
 
+
         for (Urnas urna : urnasCadastradas){
-            String filename = urna.getNomeDoMunicípio().replace(" ", "_") + "_Candidatos.txt";
+            String filename = urna.getNomeDoMunicípio().replace(" ", "_") +"_"+ urna.getZonaEleitoral()+"_Candidatos.txt";
             try (BufferedWriter buffer_saida = new BufferedWriter(new FileWriter(filename))){
                 for(Candidatos cn : arrayCandidato){
-                    buffer_saida.write(cn.getNome());
-                    buffer_saida.write(";");
-                    buffer_saida.write(String.valueOf(cn.getNumero()));
-                    buffer_saida.write(";");
-                    buffer_saida.write(cn.getCargo());
-                    buffer_saida.newLine();
+                    if (cn.getMunicipio().equalsIgnoreCase(urna.getNomeDoMunicípio())){
+                        buffer_saida.write(cn.getNome());
+                        buffer_saida.write(";");
+                        BigDecimal val = new BigDecimal(cn.getNumero());
+                        buffer_saida.write(val.toString());
+                        buffer_saida.write(";");
+                        buffer_saida.write(cn.getCargo());
+                        buffer_saida.newLine();
+                    }
                 }
             }
             catch (Exception e) {
