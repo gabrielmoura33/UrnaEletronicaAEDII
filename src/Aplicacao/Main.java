@@ -172,28 +172,28 @@ class ModuloTRE {
     ModuloTRE() throws IOException {
         try {
             System.out.println("1. Digite o nome do arquivo de Eleitores");
-//            eleitorDAO = new EleitorDAO(br.readLine());
-            eleitorDAO = new EleitorDAO("eleitores.txt");
+            eleitorDAO = new EleitorDAO(br.readLine());
+//            eleitorDAO = new EleitorDAO("eleitores.txt");
             abbEleitor = eleitorDAO.getAll();
 
             System.out.println("2. Digite o nome do arquivo de Candidatos");
-//            candidatosDAO = new CandidatosDAO(br.readLine());
-            candidatosDAO = new CandidatosDAO("candidatos.txt");
+            candidatosDAO = new CandidatosDAO(br.readLine());
+//            candidatosDAO = new CandidatosDAO("candidatos.txt");
             abbCandidatos = candidatosDAO.getall();
 
             System.out.println("3. Digite o nome do arquivo de Municipios");
-//            municipioDAO = new MunicipioDAO(br.readLine());
-            municipioDAO = new MunicipioDAO("municipios.txt");
+            municipioDAO = new MunicipioDAO(br.readLine());
+//            municipioDAO = new MunicipioDAO("municipios.txt");
             listaMunicipios = municipioDAO.getAll();
 
             System.out.println("4. Digite o nome do arquivo de Partidos");
-//            partidoDAO = new PartidoDAO(br.readLine());
-            partidoDAO = new PartidoDAO("partidos.txt");
+            partidoDAO = new PartidoDAO(br.readLine());
+//            partidoDAO = new PartidoDAO("partidos.txt");
             abbPartido = partidoDAO.getAll();
 
             System.out.println("5. Digite o nome do arquivo de Urnas");
-//            urnasDAO = new UrnasDAO(br.readLine());
-            urnasDAO = new UrnasDAO("urnas.txt");
+            urnasDAO = new UrnasDAO(br.readLine());
+//            urnasDAO = new UrnasDAO("urnas.txt");
             pilhaUrna = urnasDAO.getAll();
 
             urnasDAO.cadastraEleitor(abbEleitor, pilhaUrna);

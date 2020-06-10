@@ -114,10 +114,9 @@ public class VotoDAO {
     public void armazenaVencedor(ABBVoto votos, ABBCandidatos candidatos, PilhaUrna urnas){
         Candidatos[] arrayCandidato = candidatos.retornaCandidato();
         Urnas[] arrayUrnas = urnas.retornaUrnas();
-        Voto[] arrayVotos;
+
         for (Urnas urna : arrayUrnas){
             String filename = urna.getNomeDoMunicípio()+ "_" + urna.getZonaEleitoral() + "_Resultado.txt";
-
             try (BufferedWriter buffer_saida = new BufferedWriter(new FileWriter(filename))){
                 for(Candidatos cn : arrayCandidato){
                     buffer_saida.write("Nome: ");
@@ -131,38 +130,15 @@ public class VotoDAO {
                     buffer_saida.newLine();
                 }
                 buffer_saida.newLine();
+
+
+
             }
             catch (Exception e) {
                 System.out.println("Erro na abertura do Arquivo de Escrita! \n Verifique o nome do arquivo e tente novamente.");
                 System.exit(1);
             }
         }
-    }
-    public String[] escolheVencedor(String filename) {
-        try (BufferedReader buffer_entrada = new BufferedReader(new FileReader(filename))) {
-            String idSTR;
-            int numeroDeLinhas = countLinesNew(filename);
-            int i = 0;
-            int maior = 0;
-            int entrada;
-            String[] vencedor = new String[4];
-            while ((idSTR = buffer_entrada.readLine()) != null) {
-                try {
-                    String[] arrayEntrada = idSTR.split(";");
-                    entrada = Integer.parseInt(arrayEntrada[4].replace("Votos: ", ""));
-                    if (entrada > maior){
-                        vencedor = arrayEntrada;
-                    }
-                } catch (Exception e) {
-                    System.out.println(e);
-                }
-                i++;
-            }
-            return vencedor;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
     }
         public void armazenaAusencia(Voto voto){
 
