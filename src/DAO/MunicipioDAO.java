@@ -9,15 +9,18 @@ public class MunicipioDAO {
 
     private Municipios[] municipios;
     private String filename;
+    //	Construtor da classe
     public MunicipioDAO(String filename) {
         this.filename = filename;
     }
 
+//	Método que retorna uma árvore criada com todos os municipios contidos diretamente para quem o chamou
     public ListaMunicipios getAll() {
         ListaMunicipios lista = readFromFile();
         return lista;
     }
-
+    //	Método que lé os atributos dos municipios do arquivo, realiza o split e atribui corretamente
+//	a cada municipio
     private ListaMunicipios readFromFile() {
     	ListaMunicipios aux = new ListaMunicipios();
         try (BufferedReader buffer_entrada = new BufferedReader(new FileReader(filename))) {
@@ -52,7 +55,8 @@ public class MunicipioDAO {
         }
         return null;
     }
-
+    //	Método que conta todas as linhas do arquivo para possibilitar a criação do array com tamanho ideal
+//	indiferente da quantidade de informação no arquivo.
     public static int countLinesNew(String filename) throws IOException {
         InputStream is = new BufferedInputStream(new FileInputStream(filename));
         try {
@@ -63,7 +67,6 @@ public class MunicipioDAO {
                 return 0;
             }
 
-            // make it easy for the optimizer to tune this loop
             int count = 0;
             while (readChars == 1024) {
                 for (int i=0; i<1024;) {

@@ -9,15 +9,19 @@ public class EleitorDAO {
 
     private Eleitor[] eleitor;
     private String filename;
+
+    //	Construtor da classe
     public EleitorDAO(String filename) {
         this.filename = filename;
     }
 
+//	Método que retorna uma árvore criada com todos os eleitores contidos diretamente para quem o chamou
     public ABBEleitor getAll() {
         ABBEleitor arvore = readFromFile();
         return arvore;
     }
-
+    //	Método que lé os atributos dos eleitores do arquiv  o, realiza o split e atribui corretamente
+//	a cada eleitores
     private ABBEleitor readFromFile() {
         ABBEleitor aux = new ABBEleitor();
         try (BufferedReader buffer_entrada = new BufferedReader(new FileReader(filename))) {
@@ -53,15 +57,8 @@ public class EleitorDAO {
         return null;
     }
 
-
-    public ABBEleitor index(){
-        ABBEleitor arvore = readFromUrnaFile();
-        return arvore;
-    }
-
-    private ABBEleitor readFromUrnaFile(){
-        return null;
-    }
+    //	Método que conta todas as linhas do arquivo para possibilitar a criação do array com tamanho ideal
+//	indiferente da quantidade de informação no arquivo.
     public static int countLinesNew(String filename) throws IOException {
         InputStream is = new BufferedInputStream(new FileInputStream(filename));
         try {

@@ -22,6 +22,7 @@ public class ABBCandidatos {
 		}
 	}
 
+// Método recursivo do procedimento de inserir novos candidatos
 	private NodoCandidatos adicionar(NodoCandidatos raizArvore, Candidatos candidatos)
 	{
 		if (raizArvore == null)
@@ -41,11 +42,12 @@ public class ABBCandidatos {
 		return raizArvore;
 	}
 
-
+// Método que insere novos candidatos a arvore
 	public void inserir(Candidatos candidatoNovo) {
 		this.raiz = adicionar(this.raiz, candidatoNovo);
 	}
 
+// Recursão do método de retirar candidatos
 	private NodoCandidatos antecessor(NodoCandidatos candidatosRetirar, NodoCandidatos raizArvore) {
 		if(raizArvore.direita != null) {
 			raizArvore.direita = antecessor(candidatosRetirar, raizArvore.direita);
@@ -61,6 +63,7 @@ public class ABBCandidatos {
 		}
 	}
 
+	// Método recursivo que busca e retira candidato caso encontrado
 	private NodoCandidatos retirar(NodoCandidatos raizArvore, double numero) {
 		if(raizArvore == null) {
 			System.out.println("O Candidato, cujo o N�mero " + numero + ", n�o foi encontrado");
@@ -93,6 +96,7 @@ public class ABBCandidatos {
 		this.raiz = retirar(this.raiz, matriculaRemover);
 	}
 
+	//	Imprime os candidatos em forma alfabetica.
 	public void imprimirMenorMaior(NodoCandidatos raizArvore) {
 		if(raizArvore != null) {
 			imprimirMenorMaior(raizArvore.esquerda);
@@ -104,10 +108,12 @@ public class ABBCandidatos {
 		}
 	}
 
+	//Método que usa imprimirMenorMaior de forma recursiva
 	public void imprimirEmOrdem() {
 		imprimirMenorMaior(this.raiz);
 	}
 
+// Método que conta o número de candidatos totais
 	public int contarNumCandidatos(NodoCandidatos raizArvore) {
 		int soma = 1;
 
@@ -120,10 +126,12 @@ public class ABBCandidatos {
 		return soma;
 	}
 
+	// Método recursivo para contar o número total de candidatos
 	public int numCandidatos() {
 		return contarNumCandidatos(this.raiz);
 	}
 
+	// Método utilizado para retornar as informações da árvore em um array
 	private Candidatos[] retornaCandidatoMenorMaior(NodoCandidatos raizArvore){
 		if (raizArvore != null) {
 			retornaCandidatoMenorMaior(raizArvore.esquerda);

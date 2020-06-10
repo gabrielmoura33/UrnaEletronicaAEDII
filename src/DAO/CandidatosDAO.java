@@ -9,16 +9,19 @@ public class CandidatosDAO {
 	
 	private Candidatos[] candidatos;
 	private String filename;
-	
+	//	Construtor da classe
 	public CandidatosDAO(String filename) {
 		this.filename = filename;
 	}
-	
+
+	//	Método que retorna uma árvore criada com todos os candidatos contidos diretamente para quem o chamou
 	public ABBCandidatos getall() {
 		ABBCandidatos arvore = readFromFile();
 		return arvore;
 	}
-	
+
+	//	Método que lé os atributos dos candidatos do arquivo, realiza o split e atribui corretamente
+	//	a cada candidato
 	private ABBCandidatos readFromFile() {
 		ABBCandidatos aux = new ABBCandidatos();
 		
@@ -55,7 +58,8 @@ public class CandidatosDAO {
 		}
 		return null;
 	}
-	
+	//	Método que conta todas as linhas do arquivo para possibilitar a criação do array com tamanho ideal
+	//	indiferente da quantidade de informação no arquivo.
 	public static int countLinesNew(String filename) throws IOException{
 		InputStream is = new BufferedInputStream(new FileInputStream(filename));
 		try {

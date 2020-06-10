@@ -22,6 +22,8 @@ public class ABBEleitor {
     }
 
 
+// Método recursivo do procedimento de inserir novos eleitores
+
     private NodoEleitor adicionar(NodoEleitor raizArvore, Eleitor eleitor)
     {
         if (raizArvore == null)
@@ -41,6 +43,7 @@ public class ABBEleitor {
         return raizArvore;
     }
 
+// Metodo para inserir novos eleitores a arvore
     public void inserir(Eleitor eleitorNovo)
     {
         this.raiz = adicionar(this.raiz, eleitorNovo);
@@ -117,7 +120,7 @@ public class ABBEleitor {
         }
     }
 
-
+//Método que usa imprimirMenorMaior de forma recursiva
     public void imprimirEmOrdem() {
         imprimirMenorMaior(this.raiz);
     }
@@ -137,6 +140,7 @@ public class ABBEleitor {
         return contarNumEleitores(this.raiz);
     }
 
+    // Método utilizado para retornar as informações da árvore em um array
     private Eleitor[] retornaEleitorMenorMaior(NodoEleitor raizArvore){
         if (raizArvore != null) {
             retornaEleitorMenorMaior(raizArvore.esquerda);
