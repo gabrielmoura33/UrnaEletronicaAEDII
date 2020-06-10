@@ -6,6 +6,7 @@ public class ABBVoto {
 
 	private NodoVoto raiz;
     private Voto[] arrayVotos;
+    private int root = 0;
 
     public ABBVoto()
     {
@@ -64,18 +65,19 @@ public class ABBVoto {
     }
 
 
-    private Voto[] retornaVotosMaiorMenor(NodoVoto raizArvore, int posicao ){
+    private Voto[] retornaVotosMaiorMenor(NodoVoto raizArvore ){
         if (raizArvore != null) {
-            retornaVotosMaiorMenor(raizArvore.esquerda, posicao + 1);
-                arrayVotos[posicao] = raizArvore.item;
-            retornaVotosMaiorMenor(raizArvore.direita, posicao + 1);
+            retornaVotosMaiorMenor(raizArvore.esquerda);
+                arrayVotos[root] = raizArvore.item;
+                root ++;
+            retornaVotosMaiorMenor(raizArvore.direita);
         }
         return arrayVotos;
     }
 
     public Voto[] retornaVotos() {
         arrayVotos = new Voto[numVotos()];
-        return retornaVotosMaiorMenor(this.raiz, 0);
+        return retornaVotosMaiorMenor(this.raiz);
     }
 
     public Voto[] retornaVotosPorZonaEleitoral (String zonaEleitoral) {

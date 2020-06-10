@@ -17,6 +17,12 @@ import java.io.IOException;
 public class TestaDAO {
     public static void main(String[] args) throws IOException {
         try {
+
+            VotoDAO votoDAO = new VotoDAO("Votos.txt");
+            UrnasDAO urnasDAO = new UrnasDAO("urnas.txt");
+            CandidatosDAO candidatosDAO = new CandidatosDAO("candidatos.txt");
+            votoDAO.armazenaVencedor(votoDAO.getAll(),candidatosDAO.getall(), urnasDAO.getAll());
+
 //            var eleitorDAO = new EleitorDAO("eleitores.txt");
 //            ABBEleitor abbEleitor = eleitorDAO.getAll();
 //            Eleitor[] eleuts = abbEleitor.retornaEleitorPorZonaEleitoral("1795");

@@ -8,6 +8,7 @@ import EstruturasDeDados.Urnas.PilhaUrna;
 import EstruturasDeDados.Votos.ABBVoto;
 
 import java.io.*;
+import java.math.BigDecimal;
 
 public class VotoDAO {
     private Voto votos[];
@@ -89,18 +90,20 @@ public class VotoDAO {
         }
     }
 
-    public void armazenaVoto(Voto voto){
-
+    public void armazenaVoto(Voto[] votosGerais){
             String filename = "Votos.txt";
             try (BufferedWriter buffer_saida = new BufferedWriter(new FileWriter(filename))){
-                buffer_saida.write(String.valueOf(voto.getTituloEleitoral()));
-                buffer_saida.write(";");
-                buffer_saida.write(String.valueOf(voto.getNumeroCandidatoVereador()));
-                buffer_saida.write(";");
-                buffer_saida.write(String.valueOf(voto.getNumeroCanditatoPrefeito()));
-                buffer_saida.write(";");
-                buffer_saida.write(voto.getZonaEleitoral());
-                buffer_saida.newLine();
+                for (Voto voto : votosGerais){
+                    BigDecimal val = new BigDecimal(voto.getTituloEleitoral());
+                    buffer_saida.write(val.toString());
+                    buffer_saida.write(";");
+                    buffer_saida.write(String.valueOf(voto.getNumeroCandidatoVereador()));
+                    buffer_saida.write(";");
+                    buffer_saida.write(String.valueOf(voto.getNumeroCanditatoPrefeito()));
+                    buffer_saida.write(";");
+                    buffer_saida.write(voto.getZonaEleitoral());
+                    buffer_saida.newLine();
+                }
             }
             catch (Exception e) {
                 System.out.println("Erro na abertura do Arquivo de Escrita! \n Verifique o nome do arquivo e tente novamente.");
@@ -108,26 +111,24 @@ public class VotoDAO {
             }
     }
 
-    public void armazenaVencedor(ABBVoto votos, ABBCandidatos candidatos){
-        Voto[] votosTotais = votos.retornaVotos();
+    public void armazenaVencedor(ABBVoto votos, ABBCandidatos candidatos, PilhaUrna urnas){
         Candidatos[] arrayCandidato = candidatos.retornaCandidato();
-        for (Voto voto : votosTotais){
-            String filename = voto.getZonaEleitoral() + "_VotosTotais.txt";
+        Urnas[] arrayUrnas = urnas.retornaUrnas();
+        for (Urnas urna : arrayUrnas){
+            String filename = urna.getNomeDoMunicípio()+ "_" + urna.getZonaEleitoral() + ".txt";
             try (BufferedWriter buffer_saida = new BufferedWriter(new FileWriter(filename))){
                 for(Candidatos cn : arrayCandidato){
-                    buffer_saida.write(" Nome: ");
+                    buffer_saida.write("Nome: ");
                     buffer_saida.write(cn.getNome());
                     buffer_saida.write(" ;Numero: ");
                     buffer_saida.write(String.valueOf(cn.getNumero()));
                     buffer_saida.write(" ;Cargo: ");
                     buffer_saida.write(cn.getCargo());
                     buffer_saida.write(" ;Votos: ");
-                    buffer_saida.write(String.valueOf(votos.retornaQuantidadeVotos(votos.retornaVotosPorZonaEleitoral(voto.getZonaEleitoral()), cn.getNumero())));
+                    buffer_saida.write(String.valueOf(votos.retornaQuantidadeVotos(votos.retornaVotosPorZonaEleitoral(urna.getZonaEleitoral()), cn.getNumero())));
                     buffer_saida.newLine();
                 }
                 buffer_saida.newLine();
-                buffer_saida.newLine();
-
             }
             catch (Exception e) {
                 System.out.println("Erro na abertura do Arquivo de Escrita! \n Verifique o nome do arquivo e tente novamente.");

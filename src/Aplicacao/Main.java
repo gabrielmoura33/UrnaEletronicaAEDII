@@ -54,13 +54,13 @@ public class Main {
             System.exit(1);
         }
 
-
     }
 
     private static void moduloUrna(ModuloTRE moduloTRE) throws IOException {
         Urnas[] urnasCadastradas = moduloTRE.pilhaUrna.retornaUrnas();
         Candidatos[] candidatosPorUrna;
-        VotoDAO daoVotos = new VotoDAO("Votos.txt");
+        VotoDAO daoVotos = new VotoDAO("VotosGerais.txt");
+        ABBVoto arvoreVotos = new ABBVoto();
         Voto voto;
 
         int i = 1;
@@ -105,6 +105,7 @@ public class Main {
                         candidatosPorUrna = moduloTRE.abbCandidatos.retornaCandidatoPorMunicipioECargo(votante.getMunicipioEleitoral());
                         if (candidatosPorUrna == null){
                             System.out.println("Sem candidatos para esse municipio!");
+                            break;
                         } else {
                             i = 1;
                             for (Candidatos vereador : candidatosPorUrna) {
@@ -125,7 +126,7 @@ public class Main {
                             voto.setZonaEleitoral(selecao);
                             voto.setTituloEleitoral(votante.getTituloEleitoral());
                         }
-                        daoVotos.armazenaVoto(voto);
+                        arvoreVotos.inserir(voto);
                     }
                     break;
                 case 2:
@@ -136,8 +137,6 @@ public class Main {
                     break;
             }
 
-
-
             if(input < 0 || input > urnasCadastradas.length + 2) {
                 System.out.println("Opção Selecionada inválida! Tente Novamente\r\n");
             } else if(input == urnasCadastradas.length + 1) {
@@ -146,6 +145,7 @@ public class Main {
             i = 1;
         }
 
+        daoVotos.armazenaVoto(arvoreVotos.retornaVotos());
         moduloTRE.ImportarDados(daoVotos);
 
 
@@ -205,8 +205,7 @@ class ModuloTRE {
     }
 
     void ImportarDados(VotoDAO votos) {
-        ABBVoto votosTotais = votos.getAll();
-        votos.armazenaVencedor(votosTotais, candidatosDAO.getall());
+        votos.armazenaVencedor(votos.getAll(), candidatosDAO.getall(), urnasDAO.getAll());
     }
     void ListarPrefeitosEleitos() {
 
